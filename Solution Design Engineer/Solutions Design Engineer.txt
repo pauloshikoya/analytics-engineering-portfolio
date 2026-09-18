@@ -1,0 +1,56 @@
+Solutions Design Engineer | S3 | Fin Control and MI San UK | Milton Keynes | Internal Mobility
+Milton Keynes, United Kingdom
+IT STARTS HERE
+Santander (www.santander.com) is evolving from a global, high-impact brand into a technology-driven organisation, and our people are at the heart of this journey. Together, we are driving a customer-centric transformation that values bold thinking, innovation, and the courage to challenge what’s possible.
+This is more than a strategic shift. It’s a chance for driven professionals to grow, learn, and make a real difference.
+Our mission is to contribute to help more people and businesses prosper. We embrace a strong risk culture and all our professionals at all levels are expected to take a proactive and responsible approach toward risk management.
+Enterprise Services is part of the Chief Information Office of Santander Technology and Operations, providing enterprise-wide systems and support services that help run and transform the bank’s IT, data and business capabilities.  Specifically, this role will support the calculation Regulatory Reporting in CFO.
+THE DIFFERENCE YOU MAKE 
+Enterprise services are looking for a Solutions Design Engineer based out of Milton Keynes.
+This role is on a fixed term contract for 20 months.
+As an Solutions Design Engineer in Enterprise Services for Regulatory Reporting, you will be responsible for the technical delivery, operation and control of systems, data flows and processes supporting Regulatory Reporting.
+The role will act as the principal technical interface between Regulatory Reporting, Finance, Risk, Data and Technology teams. It will ensure that reporting data is complete, accurate, timely, traceable and appropriately controlled from source systems through to reporting platforms and submissions.
+In the context of customer migration, the role will lead the technical integration of TSB-originated data into Santander UK reporting architecture, including the design and implementation of data interfaces, reporting configuration, consolidation processes, controls, testing and migration readiness. The role will support reporting across regulatory reporting requirements.
+We’re shaping the way we work through innovation, cutting-edge technology, collaboration and the freedom to explore new ideas. To succeed in this role, you will be responsible for:
+•	Lead end-to-end delivery of Regulatory Reporting workstreams, managing the solution lifecycle from requirements, design, development, testing, implementation, deployment, and post-release support.
+•	Define and document fit-for-purpose solution designs, technical integration approaches, data flows, and design patterns aligned to business and regulatory requirements.
+•	Collaborate with Business, Technology, Finance, Risk and other stakeholders to understand data and reporting requirements and translate them into effective technology solutions.
+•	Own the delivery of technical and data controls covering data quality, data access, reconciliation, reporting integrity, and regulatory reporting requirements.
+•	Manage project dependencies, risks, issues, and delivery blockers, escalating material risks to senior governance forums and providing clear delivery reporting and governance packs.
+•	Collaberate and drive the testing strategy and cycles to ensure a robust delivery of the business and technical requirements
+•	Use GenAI tools to improve analysis, solution design, documentation, delivery efficiency, and project management activities.
+WHAT YOU’LL BRING
+Our people are our greatest strength. Every individual contributes unique perspectives that make us stronger as a team and as an organisation. We’re enabling teams to go beyond by valuing who they are and empowering what they bring.
+The following requirements represent the knowledge, skills, and abilities essential for success in this role. Reasonable accommodations may be made to enable individuals with disabilities to perform the essential functions.
+Professional Experience: 
+•	Proven experience delivering IT projects within banking or financial services (Required)
+•	Solid background in regulatory reporting, finance, risk, or data-driven change programmes (Required)
+•	Experience translating business and regulatory requirements into robust technology solutions (Required)
+•	Demonstrable solution design experience across data, systems, interfaces, and reporting platforms (Required)
+•	Good solutions design experience (Required)
+•	Experience managing multiple stakeholders across Business, Technology, Risk, Finance and Operations (Required)
+•	Proven ability to coordinate internal teams, third-party vendors, and technology partners (Required)
+•	Understanding of data lineage, data quality, controls, reconciliation, and regulatory reporting processes (Preferred)
+•	Experience delivering within regulated environments with good governance, audit, and control requirements (Preferred)
+Education:
+•	Bachelor’s Degree or equivalent experience (Required)
+Languages:
+•	English (Required)
+Hard Skills:
+•	IT Project Management (Required)
+•	System process re-engineering Design (Required)
+•	Data Management, Data Quality & Data Lineage (Required)
+•	SQL, Data Analysis & Data Reconciliation (Preferred)
+•	Testing and certification (Required)
+•	Change Management (Required)
+•	GenAI Tools & Technology Adoption (Preferred)
+Soft Skills:
+•	Stakeholder Management & Relationship Building (Required)
+•	Communication & Presentation Skills (Required)
+•	Analytical & Critical Thinking (Required)
+•	Problem Solving & Decision Making (Required)
+•	Leadership & Collaborative Working (Required)
+•	Planning, Organisation & Prioritisation (Required)
+•	Influencing & Negotiation (Required)
+•	Adaptability & Continuous Improvement (Preferred)
+
