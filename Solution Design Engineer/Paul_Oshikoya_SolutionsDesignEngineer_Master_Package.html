@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Kolawole Oshikoya - Solutions Design Engineer Master Package (Santander UK)</title>
+<style>
+  :root {
+    --primary: #0f2744;
+    --primary-light: #1e3a5f;
+    --accent: #b91c1c;
+    --accent-light: #fef2f2;
+    --text-dark: #1f2937;
+    --text-muted: #4b5563;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border: #e2e8f0;
+    --tag-bg: #e0e7ff;
+    --tag-text: #3730a3;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: #f1f5f9;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+
+  .nav-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .nav-links a:hover {
+    background-color: var(--primary-light);
+    color: white;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 24px auto 48px auto;
+    padding: 0 16px;
+  }
+
+  .section-card {
+    background: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 32px;
+    padding: 32px 36px;
+    border: 1px solid var(--border);
+  }
+
+  .banner {
+    background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+    color: white;
+    padding: 24px;
+    border-radius: 6px;
+    margin-bottom: 28px;
+  }
+
+  .banner h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .banner p {
+    font-size: 14px;
+    color: #cbd5e1;
+  }
+
+  .doc-section-header {
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .doc-section-header h2 {
+    color: var(--primary);
+    font-size: 19px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .doc-section-header .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* Question / Answer styling */
+  .qa-block {
+    margin-bottom: 28px;
+    border-left: 4px solid var(--primary-light);
+    padding-left: 18px;
+  }
+
+  .qa-question {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .word-badge {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+  }
+
+  .qa-answer {
+    color: var(--text-dark);
+    font-size: 13.5px;
+    line-height: 1.6;
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #edf2f7;
+  }
+
+  .qa-answer p {
+    margin-bottom: 12px;
+  }
+
+  .qa-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* CV Styling */
+  .cv-header {
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cv-header h1 {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+
+  .cv-header .title {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  .cv-header .contact-line {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .cv-section-title {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1.5px solid var(--border);
+    padding-bottom: 4px;
+    margin: 20px 0 12px 0;
+  }
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 4px;
+  }
+
+  .job-block {
+    margin-bottom: 18px;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .job-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .job-company {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .job-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  ul.custom-list {
+    margin-left: 18px;
+    margin-top: 6px;
+  }
+
+  ul.custom-list li {
+    margin-bottom: 6px;
+    color: var(--text-dark);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .grid-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+  }
+
+  .grid-card h4 {
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .grid-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* STAR Stories Styling */
+  .star-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  .star-badge {
+    background: var(--primary);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .star-question {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .star-grid {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 10px 14px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .star-lbl {
+    font-weight: 700;
+    color: var(--primary);
+    text-align: right;
+  }
+
+  .star-content {
+    color: var(--text-dark);
+  }
+
+  /* Table styling */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 12.5px;
+  }
+
+  .styled-table th, .styled-table td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .styled-table th {
+    background-color: var(--bg-light);
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .styled-table tr:nth-child(even) {
+    background-color: #fbfcfe;
+  }
+
+  @media print {
+    body {
+      background: white;
+      font-size: 11pt;
+    }
+    .nav-bar {
+      display: none;
+    }
+    .container {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .section-card {
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      margin-bottom: 40px;
+      page-break-after: always;
+    }
+    .section-card:last-child {
+      page-break-after: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <div class="nav-title">Santander UK — Enterprise Services (Project Sparrow)</div>
+  <div class="nav-links">
+    <a href="#workday-answers">Workday Answers</a>
+    <a href="#curriculum-vitae">Tailored CV</a>
+    <a href="#interview-prep">STAR Interview Prep</a>
+    <a href="#onboarding-plan">30-60-90 Day Plan</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ==================== PART 1: WORKDAY APPLICATION ANSWERS ==================== -->
+  <div class="section-card" id="workday-answers">
+    <div class="banner">
+      <h1>Part 1: Workday Application Answers</h1>
+      <p>Role: Solutions Design Engineer | S3 | Fin Control & MI San UK | Milton Keynes</p>
+    </div>
+
+    <div class="doc-section-header">
+      <h2>Workday Application Questions</h2>
+      <span class="subtitle">Internal Mobility Submission</span>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-question">
+        Question 1: Why do you want to apply for this role? Provide a brief overview of your suitability for the role. Please try make your answer succinct.
+        <span class="word-badge">~420 words / 500 max</span>
+      </div>
+      <div class="qa-answer">
+        <p>I am applying for the <strong>Solutions Design Engineer (S3)</strong> role in Enterprise Services because supporting <strong>CFO Regulatory Reporting & Financial Control</strong>—particularly integrating TSB-originated customer and product data into Santander UK's reporting architecture under <strong>Project Sparrow</strong>—is one of the most critical transformation workstreams across the Bank. Having engineered, governed, and optimized data workflows on Santander's <strong>Cloud Data Foundation (CDF)</strong>, I want to bring my end-to-end technical design expertise, data control rigor, and cross-functional leadership to ensure our regulatory submissions remain accurate, fully traceable, and auditable.</p>
+        
+        <p>As an internal candidate with direct Santander technical estate knowledge, I offer immediate zero-runway readiness across four key pillars:</p>
+        
+        <p><strong>1. End-to-End Solution Design & TSB Data Integration:</strong><br>
+        I have proven experience leading the full solution lifecycle—authoring Technical Architecture Documents (TADs), Interface Control Documents (ICDs), and data lineage specifications. I specialize in designing robust data flows across AWS S3, Athena, PostgreSQL, and PySpark to ingest, consolidate, and standardize high-volume customer and multi-currency product feeds into curated reporting layers with zero data loss.</p>
+
+        <p><strong>2. Principal Technical Interface & Stakeholder Collaboration:</strong><br>
+        I excel at acting as the technical bridge between Regulatory Reporting, Finance, Risk, Operations, and Core Technology squads. I have a track record of translating complex regulatory calculation rules (such as liquidity metrics, balance sheet aggregation, and credit risk indicators) into scalable data pipelines while managing dependencies, risks, and stage-gate certifications across 15+ engineering squads.</p>
+
+        <p><strong>3. Data Lineage, 3-Tier Reconciliation & Regulatory Controls:</strong><br>
+        In regulatory reporting, data integrity is paramount. I have architected automated 3-tier reconciliation engines (volume row-counts, field-level MD5/SHA256 checksums, and financial control totals) alongside Attribute-Based Access Control (ABAC) in AWS Lake Formation. This guarantees end-to-end lineage, protects customer PII, and ensures strict compliance with internal audit and PRA/FCA standards.</p>
+
+        <p><strong>4. Testing Certification & GenAI Delivery Acceleration:</strong><br>
+        I have driven comprehensive System Integration Testing (SIT) and UAT certification cycles, creating automated validation scripts and executive Power BI tracking dashboards. Furthermore, I actively leverage approved enterprise GenAI tools to accelerate solution design documentation, SQL schema refactoring, and edge-case synthetic test data generation—shortening delivery cycles while maintaining strict accuracy.</p>
+
+        <p>Holding an <strong>MSc in Information Technology Security (Distinction)</strong> from Nottingham Trent University alongside AWS Certified Data Engineer and Solutions Architect credentials, I combine rigorous architectural design with deep governance and security discipline. Joining Enterprise Services will allow me to make an immediate, lasting impact on Santander's regulatory reporting delivery.</p>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-question">
+        Question 2: How do you decide when to escalate a risk or an issue, or deal with it yourself? Tell me about a time when you had to make that decision and the outcome.
+        <span class="word-badge">~245 words / 300 max</span>
+      </div>
+      <div class="qa-answer">
+        <p>My decision to escalate versus resolve an issue independently is governed by a structured three-pillar framework: <strong>Scope, Authority, and Programme Risk Appetite</strong>. If a discrepancy or technical defect sits squarely within my technical remit, carries zero downstream dependency risk, and does not impact agreed delivery milestones or regulatory controls, I resolve it directly with documented evidence. However, if an issue compromises regulatory data integrity, threatens critical-path delivery timelines, exposes customer PII, or requires policy alignment across Finance, Risk, and Technology, I escalate immediately with actionable impact triage.</p>
+
+        <p><strong>Situation & Decision:</strong> During a pre-cutover testing cycle on Santander's Cloud Data Foundation, I identified that a newly promoted customer account dataset lacked mandatory column-level metadata classification tags. This created a critical vulnerability, risking unauthorized exposure of sensitive financial identifiers under AWS Lake Formation access policies.</p>
+
+        <p>While I had the technical ability to silently apply a hotfix patch to the metadata myself, I recognized this was an upstream process control failure that could compromise production compliance and regulatory auditability. I chose to escalate immediately to the Data Governance Lead and Platform Owner rather than applying a silent workaround.</p>
+
+        <p><strong>Action & Outcome:</strong> I provided an impact assessment detailing affected tables, quarantined downstream promotions, and collaborated with the contributing squad to remediate the schema. Furthermore, we implemented an automated CI/CD schema pre-validation check that blocked non-compliant promotions, eliminating the risk before live execution. Escalating ensured permanent governance protection across all subsequent release waves.</p>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-question">
+        Bonus Supporting Scenario: Stakeholder Alignment & Interface Management
+        <span class="word-badge">Interview & Written Prep</span>
+      </div>
+      <div class="qa-answer">
+        <p><strong>Situation:</strong> Ahead of a critical regulatory reporting submission milestone, a deadlock arose between the CFO Regulatory Reporting team (requiring granular, daily transaction-level data for liquidity calculations) and the Data Platform Engineering squad (pushing for aggregated weekly batch feeds to avoid compute capacity overruns).</p>
+        <p><strong>Task:</strong> As the Principal Technical Interface, mediate between business requirements and technical platform constraints, design a fit-for-purpose solution, and secure sign-off across Finance, Risk, and Technology.</p>
+        <p><strong>Action:</strong> Convened discovery workshops to map mandatory calculation dependencies, identifying which specific regulatory attributes required daily granularity versus periodic aggregates. Architected a hybrid Delta-Lake consolidation pattern on AWS S3 and Athena—landing daily incremental deltas in optimized Parquet format while generating pre-materialized summary views for standard regulatory models. Presented an Architectural Trade-Off Matrix evaluating compute cost, query latency, and audit traceability to prove the hybrid design met 100% of CFO regulatory requirements while cutting compute overhead by 50%.</p>
+        <p><strong>Result:</strong> Secured unanimous sign-off across all stakeholders within 5 days, reduced daily pipeline processing times by 40%, and established a standardized design pattern adopted across subsequent CFO workstreams.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PART 2: TAILORED SOLUTIONS DESIGN CV ==================== -->
+  <div class="section-card" id="curriculum-vitae">
+    <div class="banner" style="background: linear-gradient(135deg, #0f2744 0%, #1e293b 100%);">
+      <h1>Part 2: Tailored Solutions Design Engineer CV</h1>
+      <p>Verified S3 Grade Curriculum Vitae (Formally Formatted)</p>
+    </div>
+
+    <div class="cv-header">
+      <h1>PAUL KOLAWOLE OSHIKOYA</h1>
+      <div class="title">Solutions Design Engineer | Data & Regulatory Integration (S3)</div>
+      <div class="contact-line">London / Milton Keynes, UK &bull; Internal Mobility &bull; Enterprise Services — Fin Control & MI San UK</div>
+    </div>
+
+    <div class="cv-section-title">Professional Summary</div>
+    <p style="font-size: 13px; line-height: 1.6; color: var(--text-dark); margin-bottom: 14px;">
+      Results-driven <strong>Solutions Design Engineer</strong> with extensive experience designing, governing, and delivering enterprise data solutions, system interfaces, and automated controls within regulated banking environments. Proven expertise serving as the <strong>principal technical interface</strong> across Regulatory Reporting (CFO), Finance, Risk, Operations, and Core Technology squads. Specialist in architecting end-to-end data flows, automated 3-tier reconciliation frameworks, and Attribute-Based Access Control (AWS Lake Formation) across Santander's <strong>Cloud Data Foundation (CDF)</strong>. Hands-on experience driving TSB customer and product data integration under <strong>Project Sparrow</strong>, ensuring data completeness, lineage traceability, and regulatory compliance from source extracts to regulatory submissions. AWS Certified Solutions Architect and Data Engineer holding an <strong>MSc in Information Technology Security (Distinction)</strong>.
+    </p>
+
+    <div class="cv-section-title">Core Competencies & Technical Skills</div>
+    <div class="tags-container">
+      <span class="tag">Solution Design & Architecture (TAD / ICD)</span>
+      <span class="tag">Regulatory Reporting & Financial Control</span>
+      <span class="tag">TSB Data Integration (Project Sparrow)</span>
+      <span class="tag">Principal Technical Interface</span>
+      <span class="tag">Data Lineage & Audit Traceability</span>
+      <span class="tag">3-Tier Reconciliation Frameworks</span>
+      <span class="tag">AWS Data Foundation (S3, Athena, Glue, EMR)</span>
+      <span class="tag">AWS Lake Formation ABAC Governance</span>
+      <span class="tag">Advanced SQL (CTEs, Window Partitioning)</span>
+      <span class="tag">Python & PySpark Ingestion Pipelines</span>
+      <span class="tag">System Integration Testing (SIT) & UAT</span>
+      <span class="tag">GenAI Tools & Documentation Automation</span>
+      <span class="tag">Power BI & Executive MI Dashboards</span>
+      <span class="tag">IT Project Management & RAID Governance</span>
+    </div>
+
+    <div class="cv-section-title">Professional Experience</div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div>
+          <span class="job-title">Solutions Design Engineer / Data Engineer (CDF Platform & Reporting)</span> &bull; 
+          <span class="job-company">Santander UK</span>
+        </div>
+        <div class="job-date">Feb 2024 – Present | Milton Keynes / London, UK</div>
+      </div>
+      <ul class="custom-list">
+        <li>Lead technical solution design, interface agreements (ICDs), and data flow architectures supporting <strong>CFO Regulatory Reporting</strong> and Financial Control across Santander UK's Cloud Data Foundation (CDF).</li>
+        <li>Architect the technical data integration strategy for <strong>TSB customer and product migration feeds (Project Sparrow)</strong>, defining schema mapping specifications, consolidation logic, and transformation rules across Athena, S3, PostgreSQL, and SAS.</li>
+        <li>Act as the <strong>principal technical interface</strong> bridging Regulatory Reporting, Finance, Risk, Operations, and 15+ engineering squads, translating complex accounting calculation rules into robust technical designs.</li>
+        <li>Architect and automate an enterprise <strong>3-tier reconciliation engine</strong> (volume parity, field-level MD5/SHA256 checksums, and financial control balance aggregations), ensuring 100.00% audit traceability from legacy extracts to regulatory submissions.</li>
+        <li>Design and enforce Attribute-Based Access Control (ABAC) and column-level metadata classification in <strong>AWS Lake Formation</strong>, implementing automated CI/CD schema pre-validation checks to protect customer PII and maintain GDPR compliance.</li>
+        <li>Direct System Integration Testing (SIT) and UAT certification cycles, creating automated data validation scripts and real-time Power BI defect burndown dashboards for senior governance forums.</li>
+        <li>Utilize approved <strong>enterprise GenAI tools</strong> to accelerate solution design documentation (TADs/ICDs), refactor legacy SAS scripts into modular SQL CTEs, and generate edge-case synthetic test suites—reducing documentation cycles by 50%.</li>
+      </ul>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div>
+          <span class="job-title">Senior Data Analytics & Migration Consultant</span> &bull; 
+          <span class="job-company">Apex Analytics Ltd</span>
+        </div>
+        <div class="job-date">Jan 2021 – Jan 2024 | London, UK</div>
+      </div>
+      <ul class="custom-list">
+        <li>Designed target-state data architectures, ingestion pipelines, and ETL/ELT transformation flows for large-scale financial services data migration and compliance reporting programmes.</li>
+        <li>Engineered automated source-to-target data validation frameworks across AWS, BigQuery, and PostgreSQL, reconciling millions of customer records with zero data loss.</li>
+        <li>Authored Technical Interface Agreements and Data Lineage models, ensuring regulatory compliance across PRA, FCA, and GDPR audit mandates.</li>
+        <li>Created automated exception routing workflows and fallout triage mechanisms, reducing unmapped records by 85% during cutover dry runs.</li>
+        <li>Delivered executive MI dashboards and data quality scorecards in Power BI and Tableau for senior C-suite and programme leadership.</li>
+      </ul>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div>
+          <span class="job-title">Data Solutions & Systems Analyst</span> &bull; 
+          <span class="job-company">DataCraft Solutions</span>
+        </div>
+        <div class="job-date">Jun 2017 – Dec 2020 | London, UK</div>
+      </div>
+      <ul class="custom-list">
+        <li>Collaborated with business analysts, finance controllers, and software architects to document system interface specs, data dictionaries, and ETL mapping logic.</li>
+        <li>Wrote high-performance SQL stored procedures, views, and automated batch scripts for core financial transaction processing.</li>
+        <li>Spearheaded UAT testing cycles, defect resolution workstreams, and end-user training for regulatory reporting platforms.</li>
+      </ul>
+    </div>
+
+    <div class="cv-section-title">Education, Certifications & Leadership</div>
+    <div class="two-col-grid">
+      <div class="grid-card">
+        <h4>Education</h4>
+        <p><strong>MSc in Information Technology Security (Distinction)</strong><br>Nottingham Trent University, UK</p>
+        <p style="margin-top: 6px;"><strong>BSc in Physics</strong><br>University of Lagos</p>
+      </div>
+      <div class="grid-card">
+        <h4>Certifications & Academic Leadership</h4>
+        <p><strong>AWS Certified Solutions Architect — Associate</strong><br><strong>AWS Certified Data Engineer — Associate</strong></p>
+        <p style="margin-top: 6px;"><strong>Mentor — MSc Data Science & AI</strong> (2023 – 2025)<br>University of East London</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== PART 3: STAR INTERVIEW PREPARATION GUIDE ==================== -->
+  <div class="section-card" id="interview-prep">
+    <div class="banner" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);">
+      <h1>Part 3: STAR Interview Preparation Guide</h1>
+      <p>Targeted for Santander Enterprise Services (Regulatory Reporting & Project Sparrow Panel)</p>
+    </div>
+
+    <div class="doc-section-header">
+      <h2>Core Behavioral & Technical STAR Stories</h2>
+      <span class="subtitle">Structured Interview Delivery</span>
+    </div>
+
+    <!-- STAR Story 1 -->
+    <div class="star-card">
+      <div class="star-badge">Scenario 1: Solution Design & TSB Data Integration</div>
+      <div class="star-question">"Tell me about an end-to-end technical solution design you led, particularly involving data integration or system migration in banking."</div>
+      <div class="star-grid">
+        <div class="star-lbl">Situation:</div>
+        <div class="star-content">Under <strong>Project Sparrow</strong>, Santander UK required the technical integration of millions of TSB customer accounts and legacy product records into the target reporting architecture. The CFO Regulatory Reporting team required a robust, scalable technical solution design to ingest, standardize, and consolidate these heterogeneous feeds into the <strong>Cloud Data Foundation (CDF)</strong> so that regulatory calculation engines could compute credit risk, liquidity, and balance sheet metrics without schema discrepancies or reporting latency.</div>
+
+        <div class="star-lbl">Task:</div>
+        <div class="star-content">As the <strong>Solutions Design Engineer</strong>, I was responsible for defining and documenting the end-to-end technical solution design, interface specifications (ICDs), consolidation patterns, and data flows bridging source extract feeds to target reporting platforms (Athena, PostgreSQL, SAS, and BigQuery), while establishing automated data quality gates and migration readiness criteria.</div>
+
+        <div class="star-lbl">Action:</div>
+        <div class="star-content">
+          &bull; <strong>Authored Architecture Deliverables:</strong> Created comprehensive Technical Architecture Documents (TAD), Interface Control Documents (ICD), and data lineage sequence diagrams in Confluence, detailing source-to-target mapping logic, data types, and consolidation rules.<br>
+          &bull; <strong>Architected Ingestion & Partitioning:</strong> Designed an ingestion pattern on AWS S3, Athena, and PySpark to process raw landing data into curated reporting layers, restructuring uncompacted small files and partitioning by product type and reporting period to eliminate query throttling.<br>
+          &bull; <strong>Embedded Pre-Flight Quality Gates:</strong> Established strict pre-flight validation gates—mandating schema contract compliance, UUID assignment verification, and splitter routing table consistency before allowing batches into the regulatory staging environment.<br>
+          &bull; <strong>Designed Rollback & Quarantine Controls:</strong> Built zero-data-loss rollback mechanisms and staging isolation zones to quarantine and reprocess failed batches without disrupting downstream reporting schedules.
+        </div>
+
+        <div class="star-lbl">Result:</div>
+        <div class="star-content">The solution design was approved by the Enterprise Architecture and Regulatory Governance boards on the first review cycle. The architecture successfully processed high-volume test waves with <strong>zero data loss, reduced ingestion pipeline latency by 45%</strong>, and established the standardized technical blueprint for all subsequent Project Sparrow regulatory reporting workstreams.</div>
+      </div>
+    </div>
+
+    <!-- STAR Story 2 -->
+    <div class="star-card">
+      <div class="star-badge">Scenario 2: Regulatory Data Lineage, Controls & 3-Tier Reconciliation</div>
+      <div class="star-question">"How do you ensure data quality, lineage, and audit traceability from source systems through to regulatory reporting submissions?"</div>
+      <div class="star-grid">
+        <div class="star-lbl">Situation:</div>
+        <div class="star-content">During pre-cutover testing for regulatory reporting datasets on Santander's Cloud Data Foundation, an internal audit and reconciliation check flagged two critical vulnerabilities: (1) an unexplained 0.8% record variance between legacy source extracts and target reporting tables, and (2) several newly promoted datasets lacked mandatory column-level metadata classification tags, creating a risk of exposing customer PII across unauthorized analyst roles under AWS Lake Formation.</div>
+
+        <div class="star-lbl">Task:</div>
+        <div class="star-content">I needed to design and implement a comprehensive data control and lineage framework that could isolate and remediate reconciliation discrepancies down to the field level, while enforcing strict governance guardrails and Attribute-Based Access Control (ABAC) to guarantee 100% audit compliance.</div>
+
+        <div class="star-lbl">Action:</div>
+        <div class="star-content">
+          &bull; <strong>Engineered 3-Tier Reconciliation Framework:</strong> Designed an automated, multi-layered reconciliation engine: <em>Tier 1 (Volume Parity):</em> Automated row-count verification; <em>Tier 2 (Field Checksum Hash):</em> Built composite <code>MD5 / SHA256</code> hash comparison algorithms across key financial attributes; <em>Tier 3 (Financial Balance Aggregation):</em> Executed control total reconciliations (<code>SUM(balance)</code> grouped by product, legal entity, and currency).<br>
+          &bull; <strong>Root-Cause Discrepancy Isolation:</strong> Wrote advanced recursive SQL CTEs and window partition queries across Athena and PostgreSQL to trace the 0.8% variance, identifying trailing whitespace in legacy branch codes and unmapped null keys in grandfathered account types.<br>
+          &bull; <strong>Enforced Lake Formation ABAC Governance:</strong> Implemented automated CI/CD schema pre-validation checks that scanned deployment repositories, blocking any data model promotion lacking mandatory column-level classification tags (<code>Confidential-PII</code>, <code>Restricted-Financial</code>).
+        </div>
+
+        <div class="star-lbl">Result:</div>
+        <div class="star-content">Achieved <strong>100.00% reconciliation parity across 1.2M+ customer and product records</strong> with full end-to-end data lineage from source to regulatory submission. The automated CI/CD guardrail permanently prevented 100% of untagged schema promotions, earning full sign-off from Internal Audit and the CFO Data Governance committee.</div>
+      </div>
+    </div>
+
+    <!-- STAR Story 3 -->
+    <div class="star-card">
+      <div class="star-badge">Scenario 3: Cross-Functional Stakeholder Alignment & Interface Management</div>
+      <div class="star-question">"Describe a time you acted as the principal interface between Finance, Risk, and Technology teams to resolve conflicting requirements or architectural deadlocks."</div>
+      <div class="star-grid">
+        <div class="star-lbl">Situation:</div>
+        <div class="star-content">Ahead of a major regulatory submission milestone, severe misalignment arose between the <strong>Finance / Regulatory Reporting team</strong> (demanding granular, daily transaction-level calculations for liquidity buffers) and the <strong>Data Platform & Core Engineering squads</strong> (pushing for aggregated weekly batch feeds to avoid database compute overruns and pipeline timeouts). With testing certification deadlines looming, the deadlock threatened the overall delivery roadmap.</div>
+
+        <div class="star-lbl">Task:</div>
+        <div class="star-content">As the <strong>Principal Technical Interface</strong>, I had to mediate between business expectations and technical constraints, evaluate architectural trade-offs, and design a compromise solution that satisfied regulatory accuracy requirements while maintaining platform stability and performance SLAs.</div>
+
+        <div class="star-lbl">Action:</div>
+        <div class="star-content">
+          &bull; <strong>Led Structured Discovery & Interface Mapping:</strong> Convened technical workshops with Finance Leads, Risk Modelers, and Data Platform Architects, mapping the exact regulatory reporting calculation inputs to differentiate mandatory granular attributes from aggregate fields.<br>
+          &bull; <strong>Engineered Hybrid Delta-Lake Consolidation Design:</strong> Designed a two-tiered architectural pattern: a lightweight daily incremental delta-ingestion pipeline landing high-risk liquidity and balance attributes in optimized Parquet format on AWS S3, combined with pre-calculated materialized summary views in Athena/PostgreSQL for monthly/quarterly compliance reporting.<br>
+          &bull; <strong>Facilitated Objective Trade-Off Review:</strong> Created an Architectural Trade-off Matrix comparing compute cost, storage efficiency, regulatory auditability, and pipeline latency, clearly demonstrating that the hybrid approach met 100% of CFO regulatory requirements while reducing compute overhead by 50%.<br>
+          &bull; <strong>Governed Testing & Certification Cycles:</strong> Drove cross-team System Integration Testing (SIT) and User Acceptance Testing (UAT), tracking defects on a real-time Power BI dashboard and securing formal sign-off from both Finance and Technology leads.
+        </div>
+
+        <div class="star-lbl">Result:</div>
+        <div class="star-content">Secured unanimous sign-off across all Finance, Risk, and Technology stakeholders within 5 business days. The hybrid solution met 100% of regulatory submission accuracy requirements, cut daily batch execution times by <strong>40%</strong>, and established a collaborative interface pattern adopted across multiple CFO workstreams.</div>
+      </div>
+    </div>
+
+    <!-- STAR Story 4 -->
+    <div class="star-card">
+      <div class="star-badge">Scenario 4: GenAI Tools & Engineering Delivery Acceleration</div>
+      <div class="star-question">"How have you utilized GenAI or modern automation tools to improve solution design, documentation, or project delivery efficiency?"</div>
+      <div class="star-grid">
+        <div class="star-lbl">Situation:</div>
+        <div class="star-content">The regulatory reporting migration workstream faced an aggressive delivery timeline requiring the authoring of 20+ Interface Control Documents (ICDs), complex SQL mapping logic transformations, and hundreds of comprehensive test scenarios for multi-currency product integrations across TSB and Santander datasets.</div>
+
+        <div class="star-lbl">Task:</div>
+        <div class="star-content">I took the initiative to embed approved enterprise <strong>GenAI tools and automation prompts</strong> into our engineering lifecycle to accelerate solution design documentation, refactor repetitive SQL queries, and generate edge-case testing suites while maintaining strict data security and accuracy standards.</div>
+
+        <div class="star-lbl">Action:</div>
+        <div class="star-content">
+          &bull; <strong>Automated Solution Design & Interface Specs:</strong> Developed standardized prompt templates to transform business requirement documents and raw data dictionaries into structured Technical Architecture Documents (TADs) and sequence diagrams.<br>
+          &bull; <strong>Accelerated SQL Schema Refactoring:</strong> Leveraged GenAI coding assistants to refactor legacy SAS transformation queries into modular, highly optimized SQL with recursive CTEs, window partition logic, and parameterized views.<br>
+          &bull; <strong>Generated Synthetic Test Cases for UAT Certification:</strong> Used GenAI to generate realistic, anonymized synthetic test datasets covering complex boundary conditions (leap-year interest calculations, negative balances, multi-currency conversions) without exposing production PII.<br>
+          &bull; <strong>Maintained Rigorous Verification & Governance:</strong> Enforced a mandatory peer-review and automated testing validation framework to verify all AI-assisted outputs against Santander's data standards before promotion.
+        </div>
+
+        <div class="star-lbl">Result:</div>
+        <div class="star-content">Reduced solution design documentation time by <strong>50%</strong>, accelerated SQL pipeline development by <strong>35%</strong>, and expanded UAT test case coverage by <strong>300%</strong>—uncovering 14 potential schema defects in pre-flight testing prior to production deployment.</div>
+      </div>
+    </div>
+
+    <div class="doc-section-header" style="margin-top: 28px;">
+      <h2>High-Impact Questions to Ask the Panel</h2>
+      <span class="subtitle">Demonstrating Strategic Acumen</span>
+    </div>
+
+    <ul class="custom-list" style="margin-bottom: 8px;">
+      <li><strong>Question 1:</strong> <em>"As TSB customer and product data feeds are integrated into the Cloud Data Foundation under Project Sparrow, what has been the most complex architectural interface challenge between CFO calculation engines and target reporting platforms?"</em></li>
+      <li><strong>Question 2:</strong> <em>"How are the Enterprise Services and Regulatory Reporting teams currently balancing the demand for granular daily liquidity reporting against cloud compute cost optimization and pipeline execution windows?"</em></li>
+      <li><strong>Question 3:</strong> <em>"From your perspective as hiring managers, what would success look like in the first 90 days for someone stepping into this S3 Solutions Design Engineer role?"</em></li>
+    </ul>
+  </div>
+
+
+  <!-- ==================== PART 4: 30-60-90 DAY ONBOARDING PLAN ==================== -->
+  <div class="section-card" id="onboarding-plan">
+    <div class="banner" style="background: linear-gradient(135deg, #047857 0%, #064e3b 100%);">
+      <h1>Part 4: 30-60-90 Day Solution Design Onboarding Plan</h1>
+      <p>Immediate Impact & Delivery Roadmap for Enterprise Services</p>
+    </div>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Phase</th>
+          <th style="width: 45%;">Core Objectives & Technical Activities</th>
+          <th style="width: 30%;">Key Deliverables / Milestones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Days 1 – 30<br>Discovery, Architecture & Interface Baseline</strong></td>
+          <td>
+            &bull; Audit current Regulatory Reporting architecture, data flows, and TSB integration backlogs under Project Sparrow.<br>
+            &bull; Review existing Interface Control Documents (ICDs), Technical Architecture Documents (TADs), and calculation rules across CFO squads.<br>
+            &bull; Establish working relationships with Regulatory Reporting Leads, Finance Controllers, Risk Modelers, and Cloud Platform Architects.<br>
+            &bull; Baseline current reconciliation processes and identify data lineage gaps.
+          </td>
+          <td>
+            &bull; Architecture & Lineage Gap Analysis Document.<br>
+            &bull; Stakeholder Engagement Matrix & Cadence.<br>
+            &bull; Baseline 3-Tier Reconciliation Health Check.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Days 31 – 60<br>Solution Design, Controls & Testing Strategy</strong></td>
+          <td>
+            &bull; Author fit-for-purpose Technical Solution Designs and ICDs for prioritized TSB customer and product migration reporting workstreams.<br>
+            &bull; Design and implement automated 3-tier reconciliation checks across Athena, S3, and staging databases.<br>
+            &bull; Drive System Integration Testing (SIT) and UAT certification cycles with Finance and Risk testers.<br>
+            &bull; Embed GenAI documentation workflows and prompt libraries to accelerate spec creation and schema refactoring.
+          </td>
+          <td>
+            &bull; Approved TADs and ICDs for Project Sparrow regulatory workstreams.<br>
+            &bull; Automated Data Quality & Reconciliation Dashboard in Power BI.<br>
+            &bull; SIT / UAT Sign-off Certification Pack.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Days 61 – 90<br>Full Ownership, Governance & Continuous Optimization</strong></td>
+          <td>
+            &bull; Take full ownership as the Principal Technical Interface across assigned CFO Regulatory Reporting workstreams.<br>
+            &bull; Enforce Lake Formation ABAC tagging guardrails in CI/CD pipelines to guarantee 100% audit compliance.<br>
+            &bull; Lead pre-release cutover readiness reviews and author operational runbooks and fallback procedures.<br>
+            &bull; Optimize query throughput and storage partitioning on AWS CDF, lowering compute overhead by &gt;30%.
+          </td>
+          <td>
+            &bull; Zero-defect regulatory staging data promotion for active migration waves.<br>
+            &bull; End-to-end data lineage repository in Confluence/Enterprise Catalog.<br>
+            &bull; Automated CI/CD Governance & Tagging Enforcement Policy.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>

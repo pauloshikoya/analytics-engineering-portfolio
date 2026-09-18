@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kolawole Paul Oshikoya - Solutions Design Engineer CV</title>
+<style>
+  @page {
+    size: A4;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.38;
+    font-size: 9.2pt;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4px 0;
+  }
+  header {
+    border-bottom: 2px solid #0f2744;
+    padding-bottom: 8px;
+    margin-bottom: 11px;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0f2744;
+    letter-spacing: -0.3px;
+  }
+  .location {
+    font-size: 8.8pt;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .role-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #b91c1c;
+    margin-top: 1px;
+    margin-bottom: 5px;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 8.8pt;
+    color: #475569;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .contact-bar a {
+    color: #0f2744;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  section {
+    margin-bottom: 11px;
+  }
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #0f2744;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+  }
+  .summary-text {
+    font-size: 9.0pt;
+    text-align: justify;
+    color: #334155;
+    line-height: 1.42;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 16px;
+    font-size: 8.8pt;
+  }
+  .skill-cat {
+    color: #0f2744;
+    font-weight: 700;
+  }
+  .skill-val {
+    color: #334155;
+  }
+  .experience-item {
+    margin-bottom: 9px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+  .exp-title {
+    font-size: 9.8pt;
+    font-weight: 700;
+    color: #0f2744;
+  }
+  .exp-company {
+    font-weight: 600;
+    color: #b91c1c;
+  }
+  .exp-meta {
+    font-size: 8.5pt;
+    color: #64748b;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .exp-subhead {
+    font-size: 8.5pt;
+    color: #475569;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+  }
+  .tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    font-size: 7.8pt;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  ul {
+    padding-left: 17px;
+    margin-top: 3px;
+  }
+  li {
+    font-size: 8.8pt;
+    color: #334155;
+    margin-bottom: 3px;
+    text-align: justify;
+    line-height: 1.38;
+  }
+  li strong {
+    color: #0f2744;
+    font-weight: 600;
+  }
+  .education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    font-size: 8.8pt;
+  }
+  .edu-item {
+    background: #fafafa;
+    border-left: 3px solid #0f2744;
+    padding: 4px 8px;
+    border-radius: 0 3px 3px 0;
+  }
+  .edu-degree {
+    font-weight: 700;
+    color: #0f2744;
+    font-size: 8.8pt;
+  }
+  .edu-school {
+    color: #b91c1c;
+    font-weight: 600;
+    font-size: 8.5pt;
+  }
+  .edu-meta {
+    color: #64748b;
+    font-size: 8.0pt;
+  }
+
+  @media print {
+    body {
+      font-size: 9.0pt;
+    }
+    .container {
+      max-width: 100%;
+    }
+    a {
+      color: #0f2744;
+      text-decoration: none;
+    }
+    section {
+      page-break-inside: auto;
+    }
+    .experience-item {
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <h1>Kolawole Paul Oshikoya</h1>
+      <span class="location">Milton Keynes / London, UK</span>
+    </div>
+    <div class="role-title">Solutions Design Engineer | S3 – Financial Control, Regulatory Reporting &amp; Data Integration</div>
+    <div class="contact-bar">
+      <span class="contact-item">💼 <a href="https://linkedin.com/in/kolawole-oshikoya">linkedin.com/in/kolawole-oshikoya</a></span>
+      <span class="contact-item">🏛️ Santander Internal Mobility</span>
+      <span class="contact-item">🎓 MSc IT Security (Distinction)</span>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section>
+    <h2>Professional Summary</h2>
+    <p class="summary-text">
+      Analytical, delivery-focused <strong>Solutions Design Engineer</strong> and Data Specialist with deep expertise in enterprise data architectures, regulatory reporting flows, data lineage, and systems integration within tier-1 banking. Currently operating across Santander UK’s <strong>Cloud Data Foundation (CDF)</strong>, leading the technical design, data controls, interface mapping, and reconciliation frameworks supporting complex data-driven change programmes. Adept at acting as the principal technical interface between Regulatory Reporting, Finance, Risk, Operations, and Technology teams to translate complex regulatory and business requirements into robust, controlled, and audit-ready technology solutions. Hands-on mastery in advanced SQL, data lineage tracing, reconciliation design, testing governance, system process re-engineering, and GenAI-assisted delivery tools.
+    </p>
+  </section>
+
+  <!-- CORE COMPETENCIES & TECHNICAL SKILLS -->
+  <section>
+    <h2>Core Competencies &amp; Technical Skills</h2>
+    <div class="skills-grid">
+      <div><span class="skill-cat">Solution Design &amp; Architecture:</span> <span class="skill-val">End-to-End Solution Lifecycle, Technical Interface Design, Data Flow Mapping, System Process Re-engineering, Integration Patterns.</span></div>
+      <div><span class="skill-cat">Regulatory Reporting &amp; Governance:</span> <span class="skill-val">CFO Regulatory Reporting, Data Lineage &amp; Traceability, Financial Control, Auditability, Policy Governance.</span></div>
+      <div><span class="skill-cat">Data Quality, Controls &amp; Reconciliation:</span> <span class="skill-val">3-Tier Reconciliation (Row Counts, Column Hashes, Balance Totals), Automated Control Frameworks, Lake Formation ABAC, Metadata Tagging.</span></div>
+      <div><span class="skill-cat">Data Engineering &amp; Analytics Stack:</span> <span class="skill-val">Advanced SQL (Recursive CTEs, Window Functions), AWS (S3, Athena, Lake Formation, Glue), SAS, Python.</span></div>
+      <div><span class="skill-cat">Delivery &amp; Stakeholder Management:</span> <span class="skill-val">IT Project Management, Multi-Workstream Matrix Coordination, RAID Management, Governance Packs, Third-Party Vendor Coordination.</span></div>
+      <div><span class="skill-cat">Testing, Change &amp; GenAI Adoption:</span> <span class="skill-val">System Integration Testing (SIT), UAT Certification, Change Management, AI-Assisted Solution Design, Documentation &amp; Code Refactoring.</span></div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section>
+    <h2>Professional Experience</h2>
+
+    <!-- Role 1 -->
+    <div class="experience-item">
+      <div class="exp-header">
+        <div>
+          <span class="exp-title">Data Engineer &amp; Solutions Design Specialist</span>
+          <span> – </span>
+          <span class="exp-company">Santander UK</span>
+        </div>
+        <span class="exp-meta">Feb 2023 – Present | UK</span>
+      </div>
+      <div class="exp-subhead">Enterprise Services / Cloud Data Foundation</div>
+      <div class="tags-row">
+        <span class="tag">Solution Design</span>
+        <span class="tag">Regulatory Reporting</span>
+        <span class="tag">Data Controls &amp; Lineage</span>
+        <span class="tag">AWS (Athena/S3/Lake Formation)</span>
+        <span class="tag">Advanced SQL</span>
+        <span class="tag">GenAI Tools</span>
+      </div>
+      <ul>
+        <li><strong>End-to-End Solution Design &amp; Technical Delivery:</strong> Architect and document fit-for-purpose solution designs, technical integration approaches, and data flows mapping complex banking datasets into Santander UK reporting platforms, ensuring complete end-to-end traceability from source systems through to downstream reporting submissions.</li>
+        <li><strong>Data Integration &amp; Migration Readiness:</strong> Lead technical design and data interface specifications for integrating Plotly and CDSW, product, and transactional records into Santander UK’s target reporting architecture; establish consolidation logic, transformation mappings, and migration readiness gates.</li>
+        <li><strong>Cross-Functional Stakeholder Interface:</strong> Act as the principal technical interface bridging CFO Regulatory Reporting, Finance, Risk, Technology squads, and Business Assurance; translate complex regulatory calculation rules and business logic into robust, executable technical specifications.</li>
+        <li><strong>Technical Controls, Lineage &amp; Reconciliation:</strong> Design, implement, and own rigorous data controls covering 3-tier reconciliation (volume parity, MD5/SHA256 field-level hash validation, and financial balance totals), data quality assertions, and automated schema validation to guarantee 100% reporting integrity.</li>
+        <li><strong>Data Governance &amp; Access Control Architecture:</strong> Engineer and enforce attribute-based access control (ABAC) policies and column-level metadata classification tags within AWS Lake Formation, safeguarding sensitive financial PII and ensuring strict compliance with GDPR and banking regulations.</li>
+        <li><strong>Testing Strategy &amp; Certification Cycles:</strong> Define and drive comprehensive testing strategies covering System Integration Testing (SIT), User Acceptance Testing (UAT), and dress rehearsal certification; automate test data generation and reconciliation pipelines, eliminating manual verification overhead.</li>
+        <li><strong>Project Management, Dependency &amp; RAID Governance:</strong> Actively manage delivery risks, inter-squad dependencies, and technical blockers across 15+ engineering teams; author senior governance packs, delivery scorecards, and executive dashboards in Power BI.</li>
+        <li><strong>GenAI Tooling &amp; Delivery Efficiency:</strong> Pioneer the adoption of GenAI tools to accelerate solution design documentation, complex SQL schema refactoring, synthetic test dataset generation, and project milestone tracking, cutting design-to-delivery lead times by 30%.</li>
+      </ul>
+    </div>
+
+    <!-- Role 2 -->
+    <div class="experience-item">
+      <div class="exp-header">
+        <div>
+          <span class="exp-title">Data Solutions &amp; Analytics</span>
+          <span> – </span>
+          <span class="exp-company">Santander UK</span>
+        </div>
+        <span class="exp-meta">Feb 2022 – Jan 2023 | UK</span>
+      </div>
+      <div class="exp-subhead">Financial Crime, Customer Risk &amp; Financial Analytics</div>
+      <div class="tags-row">
+        <span class="tag">Process Re-engineering</span>
+        <span class="tag">SAS SQL</span>
+        <span class="tag">Risk Modeling</span>
+        <span class="tag">Automated Controls</span>
+        <span class="tag">Governance</span>
+      </div>
+      <ul>
+        <li><strong>System Process Re-Engineering:</strong> Redesigned and automated legacy SAS and SQL data pipelines evaluating customer inflows/outflows, income shocks, and account risk behaviors, replacing manual batch processes with automated, monitored data pipelines.</li>
+        <li><strong>Data Quality &amp; Lineage Controls:</strong> Formulated automated exception handling and data quality validation frameworks that audited customer transaction histories, ensuring complete audit trails and data lineage for regulatory compliance.</li>
+        <li><strong>Complex Account &amp; Entity Modeling:</strong> Engineered recursive SQL queries (CTEs, multi-table joins, window partitions) to analyze transaction velocity, multi-account pass-through patterns, and entity relationships across millions of records.</li>
+        <li><strong>Executive MI &amp; Reporting Interfaces:</strong> Built interactive operational control dashboards in Power BI and Looker, presenting clear KPI metrics, risk trends, and remediation progress to senior risk and finance committees.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ACADEMIC MENTORSHIP & LEADERSHIP -->
+  <section>
+    <h2>Academic Mentorship &amp; Leadership</h2>
+    <div class="experience-item">
+      <div class="exp-header">
+        <div>
+          <span class="exp-title">Mentor – MSc Data Science &amp; AI</span>
+          <span> – </span>
+          <span class="exp-company">University of East London</span>
+        </div>
+        <span class="exp-meta">2023 – 2025 | London, UK</span>
+      </div>
+      <ul>
+        <li>Mentored postgraduate students on advanced data engineering, solution architecture principles, production SQL optimization, data governance frameworks, and applying generative AI tools to software design and analytics workflows.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION & PROFESSIONAL CERTIFICATIONS -->
+  <section>
+    <h2>Education &amp; Professional Certifications</h2>
+    <div class="education-grid">
+      <div class="edu-item">
+        <div class="edu-degree">MSc in Information Technology Security</div>
+        <div class="edu-school">Nottingham Trent University</div>
+        <div class="edu-meta">Graduated with Distinction | Specialized in Information Governance &amp; System Security</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">BSc in Physics</div>
+        <div class="edu-school">University of Lagos</div>
+        <div class="edu-meta">Core modules: Software Engineering, Database Systems &amp; Architecture</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">AWS Certified Data Engineer – Associate</div>
+        <div class="edu-school">Amazon Web Services (AWS)</div>
+        <div class="edu-meta">Validation of Cloud Data Pipelines, Lake Formation, Glue, Athena &amp; Security</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">AWS Certified Solutions Architect – Associate</div>
+        <div class="edu-school">Amazon Web Services (AWS)</div>
+        <div class="edu-meta">Cloud Architecture Design, Multi-Tier Systems, Resiliency &amp; Integration Patterns</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
