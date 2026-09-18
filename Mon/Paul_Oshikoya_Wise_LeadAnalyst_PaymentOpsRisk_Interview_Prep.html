@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wise Lead Analyst (Payment Operations Risk) - Interview Prep Guide | Paul Oshikoya</title>
+<style>
+  :root {
+    --wise-green: #9fe870;
+    --wise-navy: #163300;
+    --wise-forest: #224200;
+    --wise-light-bg: #f4f7f2;
+    --text-dark: #121810;
+    --text-muted: #556052;
+    --card-bg: #ffffff;
+    --border-color: #d6e2d1;
+    --highlight-blue: #0070f3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--wise-light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 30px 20px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 40px;
+    border: 1px solid var(--border-color);
+  }
+
+  header {
+    border-bottom: 2px solid var(--wise-green);
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--wise-green);
+    color: var(--wise-navy);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--wise-navy);
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  .call-context {
+    background: #eef8e8;
+    border-left: 4px solid var(--wise-forest);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 30px;
+  }
+
+  .call-context h3 {
+    color: var(--wise-forest);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: var(--wise-forest);
+    margin: 35px 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+  }
+
+  .qa-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 25px;
+    transition: all 0.2s ease;
+  }
+
+  .qa-card:hover {
+    border-color: var(--wise-green);
+    box-shadow: 0 4px 12px rgba(159, 232, 112, 0.15);
+  }
+
+  .question {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--wise-navy);
+    margin-bottom: 12px;
+  }
+
+  .tip-box {
+    background: #fdfae8;
+    border-left: 3px solid #eab308;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    color: #713f12;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 15px;
+  }
+
+  .star-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .star-row {
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #fafcf9;
+    border-left: 3px solid #ccc;
+  }
+
+  .star-row.s { border-left-color: #3b82f6; }
+  .star-row.t { border-left-color: #eab308; }
+  .star-row.a { border-left-color: #10b981; }
+  .star-row.r { border-left-color: var(--wise-forest); background: #f0f8ec; }
+
+  .star-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 90px;
+  }
+
+  .star-row.s .star-label { color: #1d4ed8; }
+  .star-row.t .star-label { color: #a16207; }
+  .star-row.a .star-label { color: #047857; }
+  .star-row.r .star-label { color: var(--wise-forest); }
+
+  .script-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 14px;
+    font-style: normal;
+  }
+
+  .script-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #475569;
+    margin-bottom: 6px;
+  }
+
+  .script-text {
+    font-size: 0.98rem;
+    color: #1e293b;
+    line-height: 1.65;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  .highlight {
+    font-weight: 600;
+    color: var(--wise-navy);
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; font-size: 11pt; }
+    .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+    .qa-card { break-inside: avoid; border: 1px solid #ddd; margin-bottom: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="badge">Wise First Round Screener & Competency Prep</div>
+    <h1>Lead Analyst — Payment Operations Risk (London)</h1>
+    <div class="subtitle">Candidate: <strong>Kolawole (Paul) Oshikoya</strong> | Target: Job ID 3826</div>
+  </header>
+
+  <div class="call-context">
+    <h3>📞 Format of This Interview Call</h3>
+    <p><em>"This will be a call to know you better; we’ll talk through your experience and hear more about your motivation to join Wise. You’ll also get the opportunity to ask us any questions."</em></p>
+    <p style="margin-top: 6px; font-size: 0.95rem; color: #2d4a1d;"><strong>Key Goal:</strong> Deliver concise, energetic, and authentic answers. Bridge your Physics and IT Security background with your high-scale financial data work at Santander UK, emphasizing <strong>fund reconciliation, loss prevention, and KRI monitoring</strong>.</p>
+  </div>
+
+  <!-- SECTION 1: ELEVATOR PITCH & MOTIVATION -->
+  <h2>🎯 1. Warm-Up: Elevator Pitch & Motivation</h2>
+
+  <div class="qa-card">
+    <div class="question">Q1: "Tell me about yourself and walk me through your background."</div>
+    <div class="tip-box"><strong>Strategy:</strong> 90 seconds max. Structure: Academic Foundation (Physics + IT Security) → Financial Data & Platform Scale at Santander UK → Why Payment Operations Risk at Wise.</div>
+    
+    <div class="script-box">
+      <div class="script-title">🗣️ Spoken Script to Deliver:</div>
+      <div class="script-text">
+        "Certainly! I’m a quantitative analyst and data engineer with a background in <strong>Physics (BSc 2:1)</strong> and an <strong>MSc in Information Technology Security (Distinction)</strong>.<br><br>
+        Over the past several years, I’ve worked in banking and financial services, most recently at <strong>Santander UK</strong>. At Santander, I’ve focused on building high-throughput quantitative pipelines and automated reconciliation frameworks that process over <strong>1.2 million financial transactions daily</strong>. A big part of my work has been designing automated control assurance systems—specifically a <strong>3-tier reconciliation engine</strong> that compares bank balances and customer fund movements using hash checksums and control totals to guarantee zero data loss, as well as forensic variance models that helped recover <strong>£2.1M in revenue leakage</strong>.<br><br>
+        Prior to that at Polaris Bank, I led operational reporting automation and customer verification analysis across 500k accounts, cutting turnaround times from 5 days to under 4 hours.<br><br>
+        I’m also an <strong>Industry Mentor for the MSc in Data Science & AI at the University of East London</strong>, where I coach students on statistical modeling and clean code.<br><br>
+        What excites me about this role at Wise is the opportunity to bring together my quantitative physics mindset, my security and control assurance training, and my hands-on SQL and data pipeline experience to help Wise scale Payment Operations Risk safely across global corridors."
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="question">Q2: "Why Wise, and why are you interested in Payment Operations Risk specifically?"</div>
+    <div class="tip-box"><strong>Strategy:</strong> Anchor to Wise's mission (Money without borders: fast, transparent, convenient, free) and show that you understand why Payment Operations Risk is vital to that mission.</div>
+    
+    <div class="script-box">
+      <div class="script-title">🗣️ Spoken Script to Deliver:</div>
+      <div class="script-text">
+        "Two main reasons:<br><br>
+        <strong>1. Wise’s Mission & Scale:</strong> Wise is transforming global money movement by making transfers instant and convenient. But as payment volumes grow into tens of billions across hundreds of currency routes, the complexity of managing liquidity, settlement risk, and operational breaks increases exponentially. For customer transfers to be instant and seamless, the underlying operational controls and reconciliations must be completely automated and flawless.<br><br>
+        <strong>2. The Exact Match for My Skillset:</strong> The Lead Analyst role in Payment Operations Risk sits right at the intersection of what I do best: writing advanced SQL and dbt pipelines, building Key Risk Indicator (KRI) models, testing control effectiveness with risk partners and auditors, and ensuring that bank balances match customer funds with zero discrepancy. Plus, Wise’s culture of autonomy, high ownership, and continuous learning across its 150+ analyst community is exactly the environment where I thrive."
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: CORE STAR BEHAVIORAL SCENARIOS -->
+  <h2>🌟 2. Core STAR Stories Tailored for Payment Ops Risk</h2>
+
+  <!-- STAR 1 -->
+  <div class="qa-card">
+    <div class="question">STAR 1: "Tell me about a time you built a reconciliation or control model to ensure customer funds and balances matched."</div>
+    <div class="tip-box"><strong>Focus:</strong> Bank balance vs. customer funds reconciliation, automated checks, 100% data integrity.</div>
+    
+    <div class="star-grid">
+      <div class="star-row s">
+        <span class="star-label">Situation</span>
+        At Santander UK, our analytics and financial reporting models processed over 1.2M daily transactions across multiple staging and target databases. In high-velocity environments, subtle timing differences or pipeline drops can create reconciliation discrepancies between source ledgers and reporting tables.
+      </div>
+      <div class="star-row t">
+        <span class="star-label">Task</span>
+        I was tasked with designing and implementing an automated, end-to-end reconciliation and control assurance framework to mathematically prove zero data loss and ensure 100% parity between source balances and downstream models.
+      </div>
+      <div class="star-row a">
+        <span class="star-label">Action</span>
+        I formulated an automated <strong>3-Tier Reconciliation Engine</strong> using SQL and Python (PySpark):
+        <ul>
+          <li><strong>Tier 1 (Volume Parity):</strong> Real-time row-count validation between source event logs and destination tables.</li>
+          <li><strong>Tier 2 (Field Integrity via Cryptographic Checksums):</strong> Generated MD5/SHA256 hashes across critical columns (Account ID, Amount, Timestamp, Transaction Ref) to catch silent field truncation or rounding errors.</li>
+          <li><strong>Tier 3 (Balance Control Totals):</strong> Reconciled absolute debit/credit sums and net position balances across ledger staging environments before any data was released to reporting models.</li>
+        </ul>
+      </div>
+      <div class="star-row r">
+        <span class="star-label">Result</span>
+        This engine eliminated <strong>100% of pipeline discrepancy risks</strong>, automated what was previously a manual spot-checking process, and established a fully auditable data lineage that gave both internal risk partners and compliance auditors total confidence in our balance numbers.
+      </div>
+    </div>
+  </div>
+
+  <!-- STAR 2 -->
+  <div class="qa-card">
+    <div class="question">STAR 2: "Describe a time when you identified an operational risk or anomaly that prevented financial loss."</div>
+    <div class="tip-box"><strong>Focus:</strong> Proactive investigation, SQL anomaly detection, £2.1M revenue/fee leakage recovery.</div>
+    
+    <div class="star-grid">
+      <div class="star-row s">
+        <span class="star-label">Situation</span>
+        During a review of portfolio transaction margins across digital banking accounts, leadership observed minor variance leakage. Routine reporting attributed it to general market fluctuations, but the root cause had not been isolated.
+      </div>
+      <div class="star-row t">
+        <span class="star-label">Task</span>
+        I initiated an in-depth data investigation across 1.2M+ historical transaction records to isolate structural anomalies in our fee calculation and payment routing logic.
+      </div>
+      <div class="star-row a">
+        <span class="star-label">Action</span>
+        Using advanced SQL (recursive CTEs and window partition functions) and Python, I segmented transaction data across account signup cohorts, product categories, and routing codes. 
+        I uncovered two distinct operational breakdowns:
+        <ul>
+          <li>An automated logic rule where promotional fee waivers failed to expire after the standard 90-day window on legacy accounts.</li>
+          <li>A merchant category routing mismatch that incorrectly classified high-volume commercial transactions under discounted retail interchange tiers.</li>
+        </ul>
+        I modeled the financial exposure, prepared a clear executive impact summary, and worked with engineering to deploy the corrective patch.
+      </div>
+      <div class="star-row r">
+        <span class="star-label">Result</span>
+        We recovered <strong>£2.1M in annualized financial leakage</strong>, corrected the routing logic permanently, and deployed an automated daily variance monitoring alert so any future misclassification is caught in real time.
+      </div>
+    </div>
+  </div>
+
+  <!-- STAR 3 -->
+  <div class="qa-card">
+    <div class="question">STAR 3: "How do you approach designing Key Risk Indicators (KRIs) and risk dashboards for stakeholders?"</div>
+    <div class="tip-box"><strong>Focus:</strong> Looker/Tableau dashboards, KRI threshold alerts, self-serve enablement, 80% inquiry reduction.</div>
+    
+    <div class="star-grid">
+      <div class="star-row s">
+        <span class="star-label">Situation</span>
+        Our central analytics squad was frequently overwhelmed with repetitive ad-hoc inquiries from Operations, Risk Managers, and Product Leads asking for transaction failure trends, processing delay spikes, and daily break summaries.
+      </div>
+      <div class="star-row t">
+        <span class="star-label">Task</span>
+        My goal was to design a centralized Key Risk Indicator (KRI) dashboard suite in Looker and Tableau with automated risk threshold alerts, enabling stakeholders to monitor payment health independently.
+      </div>
+      <div class="star-row a">
+        <span class="star-label">Action</span>
+        <ul>
+          <li>Held discovery sessions with Payment Operations and Risk Leads to define core KRIs: <em>settlement failure rate, processing latency percentiles (P95/P99), break resolution time, and unallocated balance thresholds</em>.</li>
+          <li>Modeled performant SQL and LookML views with pre-aggregated Persistent Derived Tables (PDTs) to ensure sub-second dashboard rendering.</li>
+          <li>Implemented automated conditional alerting: if any corridor or payment method exceeded its predefined risk appetite threshold (e.g. failure rate spike > 1.5%), an automated alert was triggered with root-cause drill-downs.</li>
+          <li>Ran training sessions for 40+ non-technical stakeholders to help them build their own custom slices.</li>
+        </ul>
+      </div>
+      <div class="star-row r">
+        <span class="star-label">Result</span>
+        Reduced repetitive ad-hoc operational inquiries by <strong>80%</strong>, sped up root-cause investigation time during operational incidents from hours to minutes, and established a trusted single source of truth for payment risk.
+      </div>
+    </div>
+  </div>
+
+  <!-- STAR 4 -->
+  <div class="qa-card">
+    <div class="question">STAR 4: "Tell me about a time you worked with auditors or risk partners to assure control effectiveness."</div>
+    <div class="tip-box"><strong>Focus:</strong> Collaboration with Audit/Risk, Technical Architecture & Interface Control Documents (TAD/ICD), data lineage.</div>
+    
+    <div class="star-grid">
+      <div class="star-row s">
+        <span class="star-label">Situation</span>
+        Prior to a major regulatory audit, internal risk partners and compliance auditors needed verifiable proof that our cloud data platform and financial reporting pipelines adhered to strict access governance and data lineage standards.
+      </div>
+      <div class="star-row t">
+        <span class="star-label">Task</span>
+        I was responsible for producing the technical documentation, control assurance evidence, and data lineage mapping to demonstrate the effectiveness of our internal controls.
+      </div>
+      <div class="star-row a">
+        <span class="star-label">Action</span>
+        <ul>
+          <li>Authored comprehensive Technical Architecture Documents (TAD) and Interface Control Documents (ICD) clearly mapping data flow from core transactional systems to analytical warehouses.</li>
+          <li>Demonstrated our Attribute-Based Access Control (ABAC) in AWS Lake Formation, proving that sensitive customer PII was masked while audit teams had complete visibility into transaction history.</li>
+          <li>Conducted live walkthroughs with auditors, running automated reconciliation test scripts that validated mathematical checksums and control totals on demand.</li>
+        </ul>
+      </div>
+      <div class="star-row r">
+        <span class="star-label">Result</span>
+        Achieved <strong>100% audit sign-off with zero high-priority findings</strong>, praised by risk partners for setting a benchmark in transparent, reproducible data governance.
+      </div>
+    </div>
+  </div>
+
+  <!-- STAR 5 -->
+  <div class="qa-card">
+    <div class="question">STAR 5: "How do you prioritize your work when dealing with ambiguous problems and tight deadlines?"</div>
+    <div class="tip-box"><strong>Focus:</strong> Autonomy, structuring messy problems, cutting query latency by 45% under peak loads.</div>
+    
+    <div class="star-grid">
+      <div class="star-row s">
+        <span class="star-label">Situation</span>
+        At Santander UK, analytical query execution times on our Cloud Data Foundation were ballooning to over 45 minutes during peak month-end periods, threatening our ability to produce timely risk reports and resolve operational breaks quickly.
+      </div>
+      <div class="star-row t">
+        <span class="star-label">Task</span>
+        Without an explicit step-by-step roadmap, I took ownership of diagnosing the compute bottlenecks, prioritizing optimization tasks by business impact, and re-architecting the pipeline for speed and stability.
+      </div>
+      <div class="star-row a">
+        <span class="star-label">Action</span>
+        <ul>
+          <li>Profiled the data pipelines and discovered two root causes: small-file fragmentation in S3 and unpartitioned, full-table scans in SQL queries.</li>
+          <li>Prioritized the highest-impact fixes: converted raw files into optimized columnar Parquet format, implemented multi-tiered date and category partitioning, and refactored SQL joins.</li>
+          <li>Scheduled non-urgent heavy transformations during off-peak windows and implemented query caching for repeated risk metrics.</li>
+        </ul>
+      </div>
+      <div class="star-row r">
+        <span class="star-label">Result</span>
+        Reduced analytical query latency by <strong>45%</strong> (from ~45 mins down to ~12 mins), increased pipeline compute efficiency by <strong>40%</strong>, and ensured critical risk reports were delivered ahead of SLA deadlines every single month.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: QUESTIONS TO ASK -->
+  <h2>❓ 3. Strategic Questions to Ask at the End of the Call</h2>
+
+  <div class="qa-card">
+    <div class="tip-box"><strong>Tip:</strong> Always have 2–3 sharp questions ready. This proves you understand Wise's business model, team dynamics, and operational scale.</div>
+    <ul>
+      <li><strong>Question 1 (Scale & Corridor Risk):</strong> <em>"As Wise expands into new emerging currency corridors with local banking partners, what are the most common types of operational breaks or reconciliation challenges the Payment Operations Risk team encounters?"</em></li>
+      <li><strong>Question 2 (Automation & KRI Evolution):</strong> <em>"How does the team currently balance automated real-time KRI monitoring with manual exception handling when unexpected payment gateway or bank outages occur?"</em></li>
+      <li><strong>Question 3 (Analyst Community & Impact):</strong> <em>"How does the Payment Operations Risk analyst collaborate with the broader 150+ analytics community at Wise in terms of sharing dbt models, data contracts, and best practices?"</em></li>
+      <li><strong>Question 4 (Next Steps):</strong> <em>"What does success look like in the first 90 days for the person stepping into this Lead Analyst role?"</em></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4: CHEAT SHEET -->
+  <h2>⚡ 4. 60-Second Quick Reference Talking Points</h2>
+  <div class="qa-card" style="background: #f7faf5;">
+    <p>Keep these 5 numbers and concepts in mind during your call:</p>
+    <ul>
+      <li><strong>1.2M+ Daily Records:</strong> High-throughput financial pipelines engineered at Santander UK.</li>
+      <li><strong>45% Latency Reduction:</strong> Query and pipeline optimization via Parquet compaction, SQL window functions, and PySpark.</li>
+      <li><strong>3-Tier Reconciliation Engine:</strong> Volume Parity + MD5/SHA256 Checksums + Balance Control Totals for 100% data integrity.</li>
+      <li><strong>£2.1M Revenue Leakage Recovered:</strong> Through forensic SQL anomaly investigation across transaction and routing rules.</li>
+      <li><strong>80% Ad-Hoc Queue Reduction:</strong> Built self-serve Looker (LookML) and Tableau KRI dashboards with automated threshold alerting.</li>
+      <li><strong>MSc Data Science & AI Mentor:</strong> Coaching researchers at the University of East London (reflects Wise’s community leadership).</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
