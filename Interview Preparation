@@ -1,0 +1,122 @@
+KOLAWOLE OSHIKOYA
+Nottingham, UK | LinkedIn: linkedin.com/in/kolawole-oshikoya
+SOLUTIONS DESIGN ENGINEER | BANKING DATA | REGULATORY CHANGE | DATA INTEGRATION
+PROFESSIONAL SUMMARY
+Santander UK Data Engineer and former Data Solutions Analyst with experience delivering technology and data change within a regulated banking environment. Experienced in translating business, data and governance requirements into fit-for-purpose technical solutions across cloud data platforms, data integration, data quality, access controls and reporting.
+Strong hands-on experience with SQL, AWS data services, data lineage, data quality validation, reconciliation, governance automation and production support. Experienced in working across Technology, Risk, Finance and business stakeholders to understand requirements, define technical approaches, manage dependencies and support testing and implementation.
+Particularly interested in applying this experience to end-to-end solution design, regulatory reporting and customer migration, including source-to-target data mapping, integration design, controls, reconciliation, testing and migration readiness.
+CORE COMPETENCIES
+Solution Design & Integration
+End-to-end solution lifecycle
+Requirements analysis and technical specification
+Data flow and source-to-target mapping
+System and process re-engineering
+Technical integration design
+Data and reporting solution design
+Migration readiness and implementation support
+Data, Controls & Governance
+Data quality and validation
+Data lineage and traceability
+Data reconciliation
+Data access and governance
+AWS Lake Formation access controls
+Metadata-driven validation
+Auditability and control evidence
+Exception management
+Delivery & Stakeholder Management
+Cross-functional stakeholder management
+Technology, Risk and business collaboration
+RAID and dependency management
+Testing coordination
+SIT/UAT support
+Change and implementation management
+Governance reporting and delivery updates
+Technology
+SQL
+AWS S3, Glue, Athena and Lake Formation
+Snowflake
+Python
+FastAPI
+Pandas
+Git/GitHub APIs
+Terraform
+Linux / Shell scripting
+Power BI
+SAS
+GenAI
+AI-assisted technical documentation
+SQL analysis and refactoring
+Test scenario generation
+Solution-design analysis
+Documentation acceleration
+AI-assisted development workflows
+
+PROFESSIONAL EXPERIENCE
+SANTANDER UK
+Data Engineer — Cloud Data Platform / Enterprise Services
+Aug 2024 – Present | UK
+Design and support fit-for-purpose technical solutions for enterprise banking data requirements, translating business and governance requirements into technical approaches, data flows and implementation activities.
+Design and maintain data integration and validation processes across AWS-based data platforms, supporting reliable movement and processing of banking data.
+Develop data-quality and validation controls to identify schema, completeness, consistency and processing issues before downstream consumption.
+Support data lineage and traceability by documenting source-to-target relationships, transformation logic and ownership across data flows.
+Design reconciliation approaches to validate source and target populations and identify data discrepancies during data-processing and change activities.
+Engineer governance automation supporting controlled access management, using metadata-driven processes and AWS Lake Formation capabilities.
+Automate elements of the access-governance workflow, reducing manual access-management effort by approximately 80%.
+Work with engineering, DevOps, BI, governance and business stakeholders to investigate production issues, resolve technical blockers and support delivery.
+Support technical testing and validation activities, including test-data preparation, validation queries, defect investigation and post-release checks.
+Contribute to delivery governance through dependency tracking, risk identification, issue management and technical status reporting.
+Use GenAI tools to accelerate technical documentation, SQL analysis, code refactoring, test-scenario development and delivery activities, with human review and validation before implementation.
+SANTANDER UK
+Data Solutions Analyst — Financial Crime / Risk & Analytics
+Feb 2022 – Aug 2024 | UK
+Delivered analytical data solutions supporting risk, financial crime and business reporting requirements across multiple enterprise data sources.
+Worked with stakeholders to translate analytical and reporting requirements into datasets, validation rules and reporting outputs.
+Redesigned and automated legacy SAS/SQL data-processing activities, reducing manual processing and improving repeatability and monitoring.
+Developed SQL-based analysis across large transactional datasets using joins, CTEs and window functions to investigate customer and account-level behaviours.
+Designed data-quality checks and exception-handling processes supporting reliable analytical and reporting datasets.
+Supported data lineage and auditability by documenting source data, transformations, validation rules and downstream reporting use.
+Built Power BI reporting and operational dashboards to communicate KPIs, risk trends and remediation activity to stakeholders.
+Worked across Risk, Technology and business teams to investigate data issues, clarify requirements and deliver analytical changes.
+Supported standardisation of reporting definitions and KPIs across multiple business areas.
+
+SELECTED SOLUTION DESIGN / DELIVERY EXAMPLE
+Enterprise IAM Governance Automation
+Designed and implemented an automated governance workflow to reduce the manual effort involved in enterprise AWS access-management requests.
+Problem: Access requests required significant manual processing and created operational inefficiency.
+Solution: Designed a controlled workflow that translated structured business inputs into AWS Lake Formation permission configurations and automated the associated GitHub-based review process.
+Key considerations:
+Access governance
+Metadata-driven permissions
+Validation
+Auditability
+Controlled change
+Approval workflow
+Security requirements
+Enterprise GitHub constraints
+Outcome: Reduced manual access-management effort by approximately 80% while improving consistency, traceability and auditability.
+
+MENTORING & LEADERSHIP
+University of East London
+Mentor — MSc Data Science & AI
+2023 – 2025 | London, UK
+Mentored postgraduate students in data engineering, SQL, solution architecture principles, data governance and practical application of GenAI tools.
+Supported learners in translating analytical problems into structured technical solutions.
+Explained complex technical concepts to audiences with different levels of technical experience.
+
+EDUCATION
+Nottingham Trent University
+MSc Information Technology Security — Distinction
+2021
+Relevant areas included information governance, systems security and technology risk.
+University of Lagos
+BSc Physics
+2013
+
+CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
+AWS Certified Cloud Practitioner — Amazon Web Services
+AWS Solutions Architect Associate — Training / Preparation
+Microsoft Azure DP-100 — Azure Data Science / Machine Learning
+Only list certifications here that are currently valid and for which you hold the relevant credential. Do not list AWS Data Engineer Associate unless you have actually obtained that certification.
+
+ADDITIONAL TECHNICAL EXPERIENCE
+AWS | SQL | Snowflake | S3 | Glue | Athena | Lake Formation | Terraform | Python | Pandas | FastAPI | Git/GitHub | Linux | Shell scripting | Power BI | SAS
