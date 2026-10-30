@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Oshikoya - Citadel Commodities Analyst Application & Interview Master Package</title>
+<style>
+  :root {
+    --citadel-navy: #0b1f3a;
+    --citadel-blue: #134e8d;
+    --citadel-gold: #c59b27;
+    --citadel-light-gold: #fcf8ec;
+    --citadel-accent: #0284c7;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
+    --border-dark: #cbd5e1;
+    --card-bg: #ffffff;
+    --success: #059669;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+    padding-bottom: 60px;
+  }
+
+  /* Sticky Navigation */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--citadel-navy);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .nav-brand {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-brand span {
+    color: var(--citadel-gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .print-btn {
+    background: var(--citadel-gold);
+    color: var(--citadel-navy);
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .print-btn:hover {
+    background: #deb238;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 20px;
+  }
+
+  .doc-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 36px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--citadel-light-gold);
+    color: #8c6b12;
+    border: 1px solid #ebd494;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--citadel-navy);
+    font-weight: 700;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 8px; }
+  h2 { font-size: 20px; border-bottom: 2px solid var(--citadel-gold); padding-bottom: 6px; margin-top: 24px; margin-bottom: 16px; }
+  h3 { font-size: 16px; margin-top: 18px; margin-bottom: 8px; }
+  h4 { font-size: 14px; color: var(--citadel-blue); margin-top: 12px; margin-bottom: 4px; }
+
+  p { margin-bottom: 14px; font-size: 14.5px; color: var(--text-primary); }
+
+  /* Header details */
+  .cv-header {
+    border-bottom: 2px solid var(--citadel-navy);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cv-header .title-block h1 {
+    font-size: 28px;
+    color: var(--citadel-navy);
+    letter-spacing: -0.02em;
+  }
+
+  .cv-header .title-block .subtitle {
+    font-size: 15px;
+    color: var(--citadel-blue);
+    font-weight: 600;
+  }
+
+  .contact-info {
+    font-size: 13px;
+    text-align: right;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .contact-info a {
+    color: var(--citadel-blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Executive Profile */
+  .profile-box {
+    background: #f1f5f9;
+    border-left: 4px solid var(--citadel-blue);
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 24px;
+  }
+
+  /* Skills Grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .skill-category {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .skill-category strong {
+    font-size: 13px;
+    color: var(--citadel-navy);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .skill-category span {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* Experience Cards */
+  .job-block {
+    margin-bottom: 22px;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .job-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--citadel-navy);
+  }
+
+  .company {
+    color: var(--citadel-blue);
+    font-weight: 600;
+  }
+
+  .job-date-loc {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  ul.bullet-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+
+  ul.bullet-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  ul.bullet-list li::before {
+    content: "▪";
+    position: absolute;
+    left: 2px;
+    color: var(--citadel-gold);
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  ul.bullet-list li strong {
+    color: var(--citadel-navy);
+  }
+
+  /* Education Grid */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .edu-item {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 8px;
+  }
+
+  .edu-degree {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--citadel-navy);
+  }
+
+  .edu-school {
+    font-size: 13px;
+    color: var(--citadel-blue);
+    font-weight: 600;
+  }
+
+  .edu-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* STAR Cards */
+  .star-card {
+    background: #ffffff;
+    border: 1px solid var(--border-dark);
+    border-left: 5px solid var(--citadel-navy);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .star-question {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--citadel-blue);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border-color);
+  }
+
+  .star-grid {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 8px 14px;
+    font-size: 14px;
+  }
+
+  .star-label {
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 6px;
+    border-radius: 4px;
+    text-align: center;
+    align-self: flex-start;
+  }
+
+  .star-label.sit { background: #e0f2fe; color: #0369a1; }
+  .star-label.task { background: #fef3c7; color: #b45309; }
+  .star-label.act { background: #f1f5f9; color: #334155; }
+  .star-label.res { background: #dcfce7; color: #15803d; }
+
+  .star-content {
+    color: var(--text-primary);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+
+  .star-content ul {
+    margin-top: 6px;
+    padding-left: 18px;
+  }
+
+  .star-content li {
+    margin-bottom: 4px;
+  }
+
+  /* Table styling */
+  table.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+
+  table.matrix-table th, table.matrix-table td {
+    border: 1px solid var(--border-color);
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  table.matrix-table th {
+    background: var(--citadel-navy);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  table.matrix-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  /* Cover Letter Layout */
+  .letter-meta {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .letter-body {
+    font-size: 14.5px;
+    line-height: 1.68;
+    color: #1e293b;
+  }
+
+  .letter-body p {
+    margin-bottom: 16px;
+  }
+
+  .highlight-point {
+    background: #f8fafc;
+    border-left: 3px solid var(--citadel-gold);
+    padding: 10px 14px;
+    margin: 12px 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .highlight-point strong {
+    color: var(--citadel-navy);
+  }
+
+  /* Print Styles */
+  @media print {
+    .sticky-nav { display: none !important; }
+    body { background: #ffffff; padding: 0; }
+    .container { max-width: 100%; margin: 0; padding: 0; }
+    .doc-card { border: none; box-shadow: none; padding: 0; margin-bottom: 40px; page-break-after: always; }
+    .doc-card:last-child { page-break-after: auto; }
+    @page { margin: 15mm 15mm 15mm 15mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="sticky-nav">
+  <div class="nav-brand">
+    <span>CITADEL</span> | Commodities Analyst Master Pack
+  </div>
+  <div class="nav-links">
+    <a href="#cover-letter">Cover Letter</a>
+    <a href="#cv-section">Tailored CV</a>
+    <a href="#star-prep">STAR Interview Guide</a>
+    <a href="#domain-matrix">Domain Matrix</a>
+    <a href="#panel-questions">Panel Questions</a>
+  </div>
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+</nav>
+
+<div class="container">
+
+  <!-- ==================== PART 1: COVER LETTER ==================== -->
+  <section id="cover-letter" class="doc-card">
+    <span class="section-tag">Part 1 &bull; Tailored Application Letter</span>
+    <h1>Cover Letter &bull; Commodities Analyst</h1>
+    
+    <div class="letter-meta">
+      <strong>To:</strong> Commodities Recruitment & Investment Talent Team, Citadel & Citadel Securities<br>
+      <strong>Address:</strong> Moor House, 120 London Wall, London, EC2Y 5ET, United Kingdom<br>
+      <strong>Role:</strong> Commodities Analyst &mdash; Global Commodities & Quantitative Research<br>
+      <strong>Candidate:</strong> Kolawole (Paul) Oshikoya | +44 7424 079346 | oshikoyapaul@gmail.com<br>
+      <strong>Date:</strong> 16 September 2026
+    </div>
+
+    <div class="letter-body">
+      <p>Dear Citadel Commodities Team,</p>
+
+      <p>I am writing to express my strong enthusiasm for the <strong>Commodities Analyst</strong> role at Citadel. Citadel’s Commodities business has set the gold standard for fundamental and quantitative market-making, driven by deep empirical research, proprietary technology, and high-conviction decision-making under uncertainty. I am eager to apply my academic foundation in <strong>Physics (BSc Hons, 2:1)</strong> and <strong>Information Technology Security (MSc, Distinction)</strong>, alongside my experience engineering high-throughput quantitative data infrastructure at <strong>Santander UK</strong>, to construct rigorous supply/demand balances and generate differentiated, asymmetric trade ideas for your Portfolio Managers.</p>
+
+      <p>My career transition into Commodities Analytics is a direct application of first-principles physical modeling and large-scale data engineering to the world's most dynamic physical and financial markets. I bring four core capabilities to Citadel’s trading desks:</p>
+
+      <div class="highlight-point">
+        <strong>1. First-Principles Physics & Dynamic Supply/Demand Modeling:</strong><br>
+        Commodity markets are physical systems governed by thermodynamic equilibrium, transport flow limits, and conservation of mass (&Delta;Storage = Supply &minus; Demand &minus; Losses). My training in Physics instilled a deep command of differential equations, boundary-value problems, and statistical mechanics. This allows me to model non-linear commodity balance sheets, storage depletion velocity, and regional infrastructure bottlenecks with mathematical clarity rather than static linear approximations.
+      </div>
+
+      <div class="highlight-point">
+        <strong>2. High-Throughput Python Analytics & Distributed Data Scale:</strong><br>
+        At Santander UK, I architected distributed pipelines processing <strong>1.2M+ high-velocity financial records daily</strong> using Python (pandas, NumPy, PySpark), AWS Athena, and SQL. By optimizing execution plans, data compaction, and temporal partitioning, I reduced query latency by <strong>45%</strong>. I have the computational horsepower to rapidly ingest, clean, and analyze high-frequency alternative datasets&mdash;from pipeline nominations and vessel tracking to weather indices and sensor feeds&mdash;enabling instantaneous scenario modeling for Portfolio Managers.
+      </div>
+
+      <div class="highlight-point">
+        <strong>3. Deterministic Data Quality & High-Conviction Idea Generation:</strong><br>
+        Flawed data leads to distorted portfolio positioning. Drawing on my MSc in IT Security, I engineered an automated <strong>3-tier data verification engine</strong> (volume parity, MD5/SHA256 checksums, and financial control balance reconciliations) that ensured 100.00% data integrity. Applying this forensic rigor to transactional datasets, I uncovered structural routing and pricing dislocations that recovered <strong>&pound;2.1M in annualized revenue leakage</strong>. I approach commodities with the same investigative drive: isolating statistical discrepancies, validating micro drivers, and formulating high-conviction trade theses.
+      </div>
+
+      <div class="highlight-point">
+        <strong>4. Teaching, Mentorship & Collaborative Rigor:</strong><br>
+        As an Industry Mentor for the MSc in Data Science & AI at the University of East London (2023&ndash;2025), I coached postgraduate researchers in time-series forecasting, algorithmic complexity, and model debugging. I thrive in flat, meritocratic environments that demand intellectual honesty, collaborative hypothesis testing, and the ability to defend analytical findings under rigorous peer scrutiny.
+      </div>
+
+      <p>Citadel’s relentless focus on excellence, rapid execution, and cultivating analysts into world-class Portfolio Managers represents the ideal environment for my quantitative background, computational discipline, and commercial curiosity. I welcome the opportunity to discuss how my technical depth and analytical mindset can add immediate value to your Commodities platform in London.</p>
+
+      <p>Thank you for your time and consideration.</p>
+
+      <p>Yours sincerely,<br><br>
+      <strong>Kolawole (Paul) Oshikoya</strong><br>
+      <span style="font-size: 13px; color: var(--text-muted);">BSc (Hons) Physics | MSc Information Technology Security (Distinction)<br>AWS Certified Data Engineer & Solutions Architect</span></p>
+    </div>
+  </section>
+
+  <!-- ==================== PART 2: TAILORED CV ==================== -->
+  <section id="cv-section" class="doc-card">
+    <span class="section-tag">Part 2 &bull; Tailored CV</span>
+    
+    <div class="cv-header">
+      <div class="title-block">
+        <h1>Kolawole (Paul) Oshikoya</h1>
+        <div class="subtitle">Quantitative & Fundamental Data Analyst &bull; Commodities & Market Analytics</div>
+      </div>
+      <div class="contact-info">
+        📍 London / Milton Keynes, UK<br>
+        📞 +44 7424 079346<br>
+        ✉️ <a href="mailto:oshikoyapaul@gmail.com">oshikoyapaul@gmail.com</a><br>
+        🔗 <a href="#">LinkedIn Profile</a>
+      </div>
+    </div>
+
+    <div class="profile-box">
+      <strong>Executive Profile:</strong> Analytically rigorous, quantitatively driven Analyst with an academic foundation in <strong>Physics (BSc 2:1)</strong> and an <strong>MSc in Information Technology Security (Distinction)</strong>. Proven track record in mathematical modeling, high-frequency empirical data analysis, and building high-throughput quantitative pipelines handling millions of daily records at Santander UK. Expert in designing fundamental supply-demand models, statistical anomaly detection engines, and automated 3-tier data verification frameworks. Adept at transforming complex structured and alternative market datasets into actionable commercial insights and predictive signals under fast-paced, risk-constrained environments.
+    </div>
+
+    <h2>Core Competencies & Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <strong>Quantitative & Market Modeling</strong>
+        <span>Fundamental Supply & Demand Balances, Time-Series Forecasting, Statistical Mechanics, Probability & Stochastic Calculus, Hypothesis Testing, Scenario Analysis, Linear Algebra</span>
+      </div>
+      <div class="skill-category">
+        <strong>Programming & Analytics</strong>
+        <span>Python (pandas, NumPy, SciPy, statsmodels, PySpark), SQL (Window Functions, Recursive CTEs), BigQuery, PostgreSQL, AWS Athena, Bash, Git</span>
+      </div>
+      <div class="skill-category">
+        <strong>Data Architecture & Scalability</strong>
+        <span>High-Throughput Ingestion Pipelines, Distributed Query Optimization, AWS S3 / Glue / Athena, Parquet Columnar Optimization, 3-Tier Data Verification</span>
+      </div>
+      <div class="skill-category">
+        <strong>Visualization & Governance</strong>
+        <span>Plotly, Tableau, Looker (LookML), Power BI, Real-Time Variance Alerts, AWS Lake Formation ABAC, Cryptographic Hashing (MD5/SHA256)</span>
+      </div>
+    </div>
+
+    <h2>Professional Experience</h2>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div>
+          <span class="job-title">Data Engineer & Quantitative Analytics Platform Engineer</span> &bull; <span class="company">Santander UK</span>
+        </div>
+        <div class="job-date-loc">Feb 2022 &ndash; Present | Milton Keynes / London, UK</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Constructed High-Throughput Quantitative Pipelines:</strong> Architected distributed data processing architectures using Python (PySpark), AWS S3, and Athena to ingest, clean, and standardize <strong>1.2M+ high-velocity financial records daily</strong>, reducing analytical query latency by <strong>45%</strong> through optimized data compaction and partitioning strategies.</li>
+        <li><strong>Engineered 3-Tier Data Quality & Integrity Engines:</strong> Formulated an automated mathematical verification framework combining volume parity, field-by-field <code>MD5/SHA256</code> checksums, and control balance aggregations, guaranteeing <strong>100.00% data integrity</strong> across staging and analytical reporting environments.</li>
+        <li><strong>Modeled Complex Structural Inefficiencies:</strong> Built multi-dimensional variance models and econometric cohort analyses in SQL and Python to isolate pricing and transaction discrepancies, successfully identifying and recovering <strong>&pound;2.1M in annualized revenue leakage</strong>.</li>
+        <li><strong>Developed Ad-Hoc Analytics & Scenario Tools:</strong> Created automated Python and SQL scripts for ad-hoc market anomaly investigation, delivering rapid risk evaluations and scenario projections to senior leadership under tight delivery deadlines.</li>
+        <li><strong>Optimized Distributed Computation Under Peak Load:</strong> Refactored complex SQL stored procedures and PySpark execution graphs over multi-terabyte datasets, boosting compute efficiency by <strong>40%</strong> and preventing pipeline throttling during peak volume hours.</li>
+        <li><strong>Enforced Attribute-Based Security Governance:</strong> Implemented column-level metadata classification and access policies in AWS Lake Formation, safeguarding proprietary data assets while maintaining seamless data lineage across cross-functional squads.</li>
+      </ul>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div>
+          <span class="job-title">Data Analyst & Quantitative BI Specialist</span> &bull; <span class="company">Polaris Bank / Financial Services</span>
+        </div>
+        <div class="job-date-loc">Sep 2014 &ndash; Sep 2019 | Lagos, Nigeria</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Built Empirical Market & Portfolio Models:</strong> Developed statistical models in SQL and Python to analyze transaction velocity distributions, customer asset flows, and liquidity positions across <strong>500,000+ active accounts</strong>.</li>
+        <li><strong>Automated Data Extraction & Close Workflows:</strong> Streamlined fragmented operational reporting into scheduled, idempotent SQL and Python data pipelines, reducing monthly reconciliation and analytical turnaround from <strong>5 business days to under 4 hours</strong>.</li>
+        <li><strong>Deployed Interactive Analytical Dashboards:</strong> Designed self-serve BI tools in Tableau and Power BI featuring automated variance alerting and dynamic drill-downs, reducing ad-hoc data requests by <strong>80%</strong> for executive stakeholders.</li>
+        <li><strong>Led Anomaly & Variance Investigations:</strong> Analyzed ledger variances and transactional exceptions using time-series analysis, isolating systemic operational bottlenecks and elevating data completeness to <strong>99.9%</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div>
+          <span class="job-title">Industry Mentor &mdash; MSc Data Science & AI</span> &bull; <span class="company">University of East London</span>
+        </div>
+        <div class="job-date-loc">2023 &ndash; 2025 | London, UK</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Mentored Quantitative & ML Research:</strong> Coached postgraduate students in mathematical modeling, time-series forecasting, Python algorithmic optimization, and statistical hypothesis testing.</li>
+        <li><strong>Facilitated Technical Code & Architecture Reviews:</strong> Led weekly code walkthroughs focusing on scalable data structures, clean code standards, and debugging distributed analytical systems.</li>
+      </ul>
+    </div>
+
+    <h2>Education & Professional Credentials</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div class="edu-degree">MSc in Information Technology Security (Distinction)</div>
+        <div class="edu-school">Nottingham Trent University, UK</div>
+        <div class="edu-desc">Advanced Cryptography, Network Security, Risk & Vulnerability Systems</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">BSc (Hons) in Physics (Second Class Upper / 2:1)</div>
+        <div class="edu-school">University of Lagos, Nigeria</div>
+        <div class="edu-desc">Mathematical Methods, Statistical Mechanics, Computational Modeling, Quantum Physics</div>
+      </div>
+    </div>
+    <div style="margin-top: 14px; font-size: 13.5px; color: var(--text-secondary);">
+      <strong>Certifications:</strong> AWS Certified Data Engineer &ndash; Associate &bull; AWS Certified Solutions Architect &ndash; Associate
+    </div>
+  </section>
+
+  <!-- ==================== PART 3: STAR INTERVIEW PREP ==================== -->
+  <section id="star-prep" class="doc-card">
+    <span class="section-tag">Part 3 &bull; STAR Interview Preparation Guide</span>
+    <h1>STAR Behavioral & Technical Interview Master Guide</h1>
+    <p>Tailored specifically for the Citadel Commodities Analyst interview loop, aligning your physics foundation, Python engineering scale, and commercial insight generation.</p>
+
+    <!-- Scenario 1 -->
+    <div class="star-card">
+      <div class="star-question">
+        Scenario 1: Fundamental Supply/Demand Modeling & Dynamic Equilibrium
+        <div style="font-size: 13px; font-weight: normal; color: var(--text-muted); margin-top: 2px;">
+          <strong>Target Prompt:</strong> "How do you approach building a fundamental supply and demand balance model from scratch, and how does your physics background inform your modeling methodology?"
+        </div>
+      </div>
+      <div class="star-grid">
+        <div class="star-label sit">Situation</div>
+        <div class="star-content">When analyzing enterprise-wide transaction and liquidity flows across 1.2M+ customer accounts at Santander UK, static reporting treated flows as linear tables, failing to capture non-linear bottlenecks, storage drawdowns, and transmission constraints during high-volatility windows.</div>
+
+        <div class="star-label task">Task</div>
+        <div class="star-content">Build a dynamic supply/demand balance sheet framework in Python and SQL modeling real-time inflows (production), consumption elasticities, inventory capacity limits, and transmission losses to forecast imbalances before they impacted portfolio stability.</div>
+
+        <div class="star-label act">Action</div>
+        <div class="star-content">
+          <ul>
+            <li><strong>Applied Conservation Laws:</strong> Formulated the model around physical conservation of mass principles (&Delta;Storage = Inflows &minus; Outflows &minus; Losses), treating infrastructure throughput and capital buffers as strict boundary constraints.</li>
+            <li><strong>Programmed Non-Linear Elasticity:</strong> Programmed econometric regression modules in Python (<code>scipy.optimize</code>, <code>statsmodels</code>) to isolate non-linear price elasticities, seasonal drawdowns, and structural supply lag times.</li>
+            <li><strong>Automated Telemetry Ingestion:</strong> Automated high-frequency telemetry ingestion into AWS Athena and PostgreSQL, standardizing timestamps and units across disparate feeds.</li>
+            <li><strong>Simulated Tail-Risk Stress Tests:</strong> Simulated tail-risk stress scenarios (infrastructure outages, demand spikes) to calculate exact depletion velocity relative to replenishment lead times.</li>
+          </ul>
+        </div>
+
+        <div class="star-label res">Result</div>
+        <div class="star-content">Delivered a dynamic balance model updating daily that cut liquidity projection errors by <strong>35%</strong>, providing leadership with a <strong>2-week early-warning indicator</strong> on inventory/capital tightening.</div>
+      </div>
+    </div>
+
+    <!-- Scenario 2 -->
+    <div class="star-card">
+      <div class="star-question">
+        Scenario 2: High-Throughput Python Market Analytics & Latency Optimization
+        <div style="font-size: 13px; font-weight: normal; color: var(--text-muted); margin-top: 2px;">
+          <strong>Target Prompt:</strong> "Describe how you use Python, SQL, and distributed computing to process high-velocity, messy market datasets and generate fast analytical turnarounds for decision-makers."
+        </div>
+      </div>
+      <div class="star-grid">
+        <div class="star-label sit">Situation</div>
+        <div class="star-content">Querying multi-terabyte financial datasets (1.2M+ daily transactions) on Santander’s Cloud Data Foundation suffered from severe compute throttling and ~45-minute query execution times, creating severe bottlenecks for time-sensitive variance analyses.</div>
+
+        <div class="star-label task">Task</div>
+        <div class="star-content">Re-architect the data processing engine using Python (PySpark), optimized SQL partitioning, and distributed computing to reduce query latency, clean uncurated feeds, and enable near-instantaneous scenario modeling.</div>
+
+        <div class="star-label act">Action</div>
+        <div class="star-content">
+          <ul>
+            <li><strong>Optimized Distributed Ingestion:</strong> Re-engineered ingestion pipelines in PySpark and AWS Athena, resolving small-file fragmentation by converting raw data into optimized columnar Parquet format with multi-tiered temporal/category partitioning.</li>
+            <li><strong>Vectorized Analytical Routines:</strong> Replaced slow iterative loops with vectorized <code>NumPy</code>/<code>pandas</code> array operations for rolling volatility, moving averages, and cumulative drawdowns.</li>
+            <li><strong>Embedded Boundary Filters:</strong> Embedded automated anomaly detection filters (Z-score and rolling median checks) at the ingestion boundary to quarantine corrupt or out-of-bounds telemetry before warehouse loading.</li>
+            <li><strong>Deployed 3-Tier Verification:</strong> Deployed a 3-tier validation framework (Volume Parity, MD5/SHA256 Field Hash Checksums, and Balance Totals) to guarantee data accuracy.</li>
+          </ul>
+        </div>
+
+        <div class="star-label res">Result</div>
+        <div class="star-content">Reduced analytical query latency by <strong>45%</strong> (from ~45 mins to under 12 mins), increased compute efficiency by <strong>40%</strong> under peak volume, and maintained <strong>100.00% data integrity</strong> across all analytical models.</div>
+      </div>
+    </div>
+
+    <!-- Scenario 3 -->
+    <div class="star-card">
+      <div class="star-question">
+        Scenario 3: Ad-Hoc Market Dislocation & Trade Idea Generation
+        <div style="font-size: 13px; font-weight: normal; color: var(--text-muted); margin-top: 2px;">
+          <strong>Target Prompt:</strong> "Tell me about a time you uncovered an anomaly or dislocation in large-scale data and converted that insight into a high-conviction recommendation or commercial action."
+        </div>
+      </div>
+      <div class="star-grid">
+        <div class="star-label sit">Situation</div>
+        <div class="star-content">Executive leadership observed a steady erosion in net product margins across digital banking portfolios. Market consensus blamed broader macroeconomic interest rate trends, but no granular root-cause analysis had validated this claim.</div>
+
+        <div class="star-label task">Task</div>
+        <div class="star-content">Conduct an urgent ad-hoc investigation across 1.2M+ transaction records, construct an econometric variance model in SQL/Python to isolate structural dislocations, quantify financial impact, and deliver clear, high-conviction remediation recommendations.</div>
+
+        <div class="star-label act">Action</div>
+        <div class="star-content">
+          <ul>
+            <li><strong>Formulated Micro Hypotheses:</strong> Hypothesized that margin erosion was driven by micro-level routing misclassifications rather than macro trends; built recursive SQL CTEs and window partition queries to dissect revenue down to customer signup vintages, product tiers, and merchant routing codes.</li>
+            <li><strong>Dissected Anomalous Drivers:</strong> Isolated two distinct dislocations: (1) an automated promotional fee-waiver rule that failed to terminate after a 90-day promotional window on grandfathered accounts, and (2) high-volume commercial transactions misclassified under discounted interchange tiers.</li>
+            <li><strong>Built Elasticity & Scenario Model:</strong> Programmed a Python scenario model quantifying the annualized P&L impact and modeling customer churn elasticity under immediate versus phased remediation.</li>
+            <li><strong>Synthesized Executive Narrative:</strong> Synthesized findings into an executive dashboard (Tableau/Plotly) and brief presented directly to commercial and financial leaders.</li>
+          </ul>
+        </div>
+
+        <div class="star-label res">Result</div>
+        <div class="star-content">Secured immediate executive approval to implement the patch, recovering <strong>&pound;2.1M in annualized revenue leakage</strong> and establishing an automated, real-time variance monitoring tool.</div>
+      </div>
+    </div>
+
+    <!-- Scenario 4 -->
+    <div class="star-card">
+      <div class="star-question">
+        Scenario 4: Fast-Paced Collaboration with PMs & Communicating Uncertainty
+        <div style="font-size: 13px; font-weight: normal; color: var(--text-muted); margin-top: 2px;">
+          <strong>Target Prompt:</strong> "How do you handle ambiguous requests from Portfolio Managers under intense time pressure, and how do you communicate technical uncertainty?"
+        </div>
+      </div>
+      <div class="star-grid">
+        <div class="star-label sit">Situation</div>
+        <div class="star-content">Ahead of a critical regulatory cutover milestone, conflicting data lineage and calculation rules between Finance, Risk, and Technical squads threatened to delay production sign-off with only 48 hours before the executive committee convened.</div>
+
+        <div class="star-label task">Task</div>
+        <div class="star-content">Act as the lead technical interface, analyze conflicting data streams, establish mathematical clarity, and present an objective decision framework to senior stakeholders under strict time limits.</div>
+
+        <div class="star-label act">Action</div>
+        <div class="star-content">
+          <ul>
+            <li><strong>Rapid Sensitivity Modeling:</strong> Scripted rapid Python sensitivity tests across historical edge-case records to isolate exact balance sheet variance impacts between the two competing methodologies.</li>
+            <li><strong>Architectural Trade-Off Matrix:</strong> Formulated a 1-page Trade-Off Matrix evaluating computational cost, regulatory compliance risk, and balance sheet variance for each approach.</li>
+            <li><strong>Quantified Uncertainty Bounds:</strong> Communicated uncertainty transparently using confidence intervals (P10, P50, P90) and explicit boundary assumptions.</li>
+            <li><strong>Defended Empirical Evidence:</strong> Facilitated the live alignment session, defending the findings with empirical evidence.</li>
+          </ul>
+        </div>
+
+        <div class="star-label res">Result</div>
+        <div class="star-content">Secured unanimous executive alignment in a single session, meeting the 48-hour deadline without delay and establishing a standardized analytical framework for future cross-functional workstreams.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PART 4: DOMAIN MATRIX ==================== -->
+  <section id="domain-matrix" class="doc-card">
+    <span class="section-tag">Part 4 &bull; Technical & Domain Quick Reference</span>
+    <h2>Commodities Concepts & Transferable Engineering Framework</h2>
+    
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Domain Concept</th>
+          <th>Commodities Application</th>
+          <th>Your Transferable Talking Point</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>S&D Balance Modeling</strong></td>
+          <td>End Inventory = Start + Production + Imports &minus; Demand &minus; Exports</td>
+          <td><strong>BSc in Physics:</strong> Conservation of mass/energy, boundary value problems, and continuum continuity equations.</td>
+        </tr>
+        <tr>
+          <td><strong>Time-Series & Elasticity</strong></td>
+          <td>Weather HDD/CDD indices, power spark spreads, seasonal storage curves</td>
+          <td><strong>Python (pandas, statsmodels):</strong> Vectorized rolling regressions, seasonal decomposition, and non-linear curve fitting.</td>
+        </tr>
+        <tr>
+          <td><strong>High-Throughput ETL</strong></td>
+          <td>Ingesting vessel AIS tracking, pipeline nominations, satellite storage data</td>
+          <td><strong>PySpark & Athena:</strong> Processing 1.2M+ daily records, 45% latency reduction, Parquet columnar optimization.</td>
+        </tr>
+        <tr>
+          <td><strong>Data Quality & Verification</strong></td>
+          <td>Detecting faulty sensor feeds, missing pipeline reports, restated production</td>
+          <td><strong>3-Tier Reconciliation:</strong> Automated Volume Parity, MD5/SHA256 checksums, and control balance aggregations.</td>
+        </tr>
+        <tr>
+          <td><strong>Commercial Impact</strong></td>
+          <td>Pricing edges, arbitrage identification, infrastructure constraint trades</td>
+          <td><strong>Leakage Remediation:</strong> Uncovering subtle structural misclassifications to recover &pound;2.1M in revenue.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ==================== PART 5: STRATEGIC QUESTIONS ==================== -->
+  <section id="panel-questions" class="doc-card">
+    <span class="section-tag">Part 5 &bull; Interview Preparation & Questions</span>
+    <h2>High-Impact Questions to Ask the Citadel Panel</h2>
+    
+    <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+      <h4 style="color: var(--citadel-navy); margin-top: 0;">1. Alternative Data vs. Fundamental Ground Truth</h4>
+      <p style="margin-bottom: 0; font-size: 14px;"><em>"Given the increasing proliferation of alternative, high-frequency data feeds in commodity markets (satellite SAR, vessel AIS tracking, pipeline SCADA feeds), how does the desk maintain the balance between rapid alternative data signals and the absolute ground truth of physical balance-sheet accounting?"</em></p>
+    </div>
+
+    <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+      <h4 style="color: var(--citadel-navy); margin-top: 0;">2. Analyst-to-Portfolio Manager Trajectory</h4>
+      <p style="margin-bottom: 0; font-size: 14px;"><em>"In your desk's workflow, what distinct traits or execution habits separate a good Commodities Analyst from one who rapidly develops high-conviction pricing edges and accelerates toward running their own book as a Portfolio Manager?"</em></p>
+    </div>
+
+    <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; margin-bottom: 0;">
+      <h4 style="color: var(--citadel-navy); margin-top: 0;">3. High-Velocity Response to Unforeseen Dislocations</h4>
+      <p style="margin-bottom: 0; font-size: 14px;"><em>"When sudden geopolitical, infrastructure, or extreme weather dislocations occur in real time, what does the first 60 minutes look like between the Commodities Analysts and the Portfolio Managers in terms of rapid scenario modeling, constraint testing, and position sizing?"</em></p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
